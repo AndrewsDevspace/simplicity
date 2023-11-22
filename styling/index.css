@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: #222;
+  color: #CCC;
+}
+
+
+
+/* Dynamic Styles */
+
+.not-displayed {
+  display: none;
+}

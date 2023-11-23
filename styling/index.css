@@ -4,9 +4,50 @@ body {
   color: #CCC;
 }
 
+img {
+  margin-bottom: -4px;
+}
+
+#normal-game-screen {
+  height: 100lvh;
+}
+
+#splash-welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 10%;
+}
+
+#splash-welcome {
+  position: relative;
+  width: 100%;
+}
+
+#splash-welcome > img {
+  width: 100%;
+  z-index: 0;
+}
+
+#splash-crash {
+  width: 100%;
+}
+
+#crash-text {
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: calc(0.4em + 1.8vw);
+  margin: 0;
+  padding: 0.25em;
+  background-color: black;
+}
 
 
-/* Dynamic Styles */
+
+/* * * * * * * * *
+* Dynamic Styles *
+* * * * * * * * */
 
 .not-displayed {
   display: none;

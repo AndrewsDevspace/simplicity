@@ -5,6 +5,7 @@ function validateDisplayDevice() {
     return true;
   } else {
     $("#device-not-supported").removeClass("not-displayed");
+    console.log('LOG ERROR: device not supported!');
     return false;
   }
 }

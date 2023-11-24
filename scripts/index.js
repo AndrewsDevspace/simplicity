@@ -18,6 +18,10 @@ function validateDisplayDevice() {
 // Check display resolution.
 const validDisplay = validateDisplayDevice();
 
+//Test clicks on enabled / disabled buttons:
+// $("#newcity-button").on("click", function() { console.log('TEST new city CLICK.'); });
+// $("#loadcity-button").on("click", function() { console.log('TEST load city CLICK.'); });
+
 if (validDisplay) {
   console.log(`LOG validDisplay: (${validDisplay})`);
   console.log('LOG STATUS: gameplay can start.');

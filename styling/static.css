@@ -10,8 +10,8 @@
 /*///////////////////////////*/
 body {
   margin: 0;
-  background-color: #222;
-  color: #CCC;
+  background-color: var(--default-back-color);
+  color: var(--default-fore-color);
 }
 
 #normal-game-screen {
@@ -72,7 +72,7 @@ img {
   font-size: calc(0.4em + 1.8vw);
   margin: 0;
   padding: 0.25em;
-  background-color: black;
+  background-color: var(--crash-screen-bg-color);
 }
 
 

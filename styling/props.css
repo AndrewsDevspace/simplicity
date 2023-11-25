@@ -1,0 +1,25 @@
+
+
+
+/* * * * * * * * * *
+* Custom properties *
+* * * * * * * * * */
+
+
+:root {
+  --crash-screen-bg-color: black;
+
+  --default-back-color: #222;
+  --default-fore-color: #CCC;
+  --default-dis-f-color: #210;
+  
+  --default-foc-b-color: #CCC;
+  --default-hover-color: #A86;
+  --default-active-color: #CA8;
+
+  --dialog-back-color: #222;
+  --dialog-fore-color: #AAA;
+
+  --dia-ctrl-back-color: black;
+  --dia-ctrl-dis-f-color: #420;
+}

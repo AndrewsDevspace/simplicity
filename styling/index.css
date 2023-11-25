@@ -1,196 +1,21 @@
-/* * * * * * * * * * * *
-* Initial Basic Styling *
- * * * * * * * * * * * */
-body {
-  margin: 0;
-  background-color: #222;
-  color: #CCC;
-}
-
-img {
-  margin-bottom: -4px;
-}
-
-.row-of-buttons {
-  display: flex;
-}
-
-button {
-  background-color: #222;
-  color: #CCC;
-  padding: 0.2em;
-  border: none;
-  border-radius: 5px;
-  user-select: none;
-}
-
-.center-label-text {
-  text-align: center;
-}
-
-.row-of-buttons > button {
-  margin: 0 0.5em;
-}
-
-button:focus {
-  outline: #CCC solid 1px;
-}
-
-button:hover {
-  outline: #ADA solid 2px;
-  color: #ADA;
-}
-
-button:active {
-  outline: #6E6 solid 3px;
-  color: #6E6;
-}
-
-button[disabled],
-button:disabled {
-  color: black;
-  outline: none;
-}
-
-label {
-  display: inline-block;
-  color: #CCC;
-  user-select: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.25em;
-  margin-bottom: 0.15em;
-}
-
-dialog {
-  padding: 1em 1.75em;
-  background-color: #222;
-  color: #AAA;
-  border: 2px solid #AAA;
-  border-radius: 10px;
-}
-
-dialog label {
-  color: #AAA;
-}
-
-dialog button {
-  background-color: black;
-  color: #AAA;
-}
-
-dialog button[disabled],
-dialog button:disabled {
-  color: #333;
-  outline: none;
-}
-
-dialog input[type="text"] {
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-  background-color: black;
-  color: #AAA;
-  border-radius: 5px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5em;
-  text-align: inherit;
-  padding: 0.2em;
-}
-
-dialog input[type="text"]:focus {
-  outline: #AAA solid 1px;
-}
 
 
 
 /* * * * * * * * * * * *
-* Game Screen Elements *
+* Special Local Styling *
 * * * * * * * * * * * */
-#normal-game-screen {
-  position: relative;
-  height: 100lvh;
-}
-
-#dialogbox-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  padding: 5% 20%;
-}
 
 
-
-/* * * * * * * * * * * * *
-* Welcome Screen Elements *
- * * * * * * * * * * * * */
-#splash-welcome-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  padding: 0 10%;
-}
-
-#splash-welcome {
-  position: relative;
-  width: 100%;
-}
-
-#splash-welcome > img {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-}
-
-#splash-menu {
-  position: absolute;
-  z-index: 1;
-  left: 4%;
-  top: 60%;
-  width: 22%;
-}
-
-#splash-menu > button {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.5em;
+/*/  Welcome Menu Buttons  /*/
+/*//////////////////////////*/
+#welcome-menu > button {
   width: 100%;
   margin-bottom: 1em;
 }
 
 
-
-/* * * * * * * * * * * *
-* Crash Screen Elements *
- * * * * * * * * * * * */
-#splash-crash {
-  width: 100%;
-}
-
-#crash-text {
-  text-align: right;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: calc(0.4em + 1.8vw);
-  margin: 0;
-  padding: 0.25em;
-  background-color: black;
-}
-
-
-
-/* * * * * * * * * * *
-* Dialog Box Elements *
- * * * * * * * * * * */
+/*/  Dialog Box Elements  /*/
+/*/////////////////////////*/
 #new-city-dialog form {
   display: flex;
   flex-direction: column;
@@ -199,11 +24,6 @@ dialog input[type="text"]:focus {
 
 #new-city-input-name {
   width: 100%;
-}
-
-#new-city-dialog button {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.5em;
 }
 
 

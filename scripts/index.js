@@ -8,7 +8,7 @@ function validateDisplayDevice() {
     $("#normal-game-screen").removeClass("not-displayed");
     return true;
   } else {
-    $("#device-not-supported").removeClass("not-displayed");
+    $("#device-crash-screen").removeClass("not-displayed");
     console.log('LOG ERROR: device not supported!');
     return false;
   }
@@ -31,7 +31,7 @@ let cityData = {
 * * * * * * * */
 
 function startCity() {
-  $("#splash-welcome-container").addClass("not-displayed");
+  $("#welcome-splash-container").addClass("not-displayed");
   console.log('LOG STATUS: {StartCity} Executing.');
 }
 
@@ -56,7 +56,7 @@ if (validDisplay) {
 
   // To Open the New City Dialog:
   $("#newcity-button").on("click", function() {
-    $("#dialogbox-container").removeClass("not-displayed");
+    $("#dialog-container").removeClass("not-displayed");
     document.querySelector("#new-city-input-name").value = "";
     $("#new-city-found").attr("disabled", "true");
     document.querySelector("#new-city-dialog").showModal();
@@ -98,7 +98,7 @@ if (validDisplay) {
     } else {
       console.log('LOG ACTION: [Found New City] Cancelled.');
     }
-    $("#dialogbox-container").addClass("not-displayed");
+    $("#dialog-container").addClass("not-displayed");
 
     if (cityData.name) {
       setTimeout(startCity, 50);

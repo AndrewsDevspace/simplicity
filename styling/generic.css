@@ -1,0 +1,117 @@
+
+
+
+/* * * * * * * * * * * * * * * * * *
+* Genreric Active Control Tamplates *
+* * * * * * * * * * * * * * * * * */
+
+
+/*/  Button Style Outside Dialog  /*/
+/*/////////////////////////////////*/
+button {
+  background-color: #222;
+  color: #CCC;
+  padding: 0.2em;
+  border: none;
+  border-radius: 5px;
+  user-select: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+}
+
+button:focus {
+  outline: #CCC solid 1px;
+}
+
+button:hover {
+  outline: #ADA solid 2px;
+  color: #ADA;
+}
+
+button:active {
+  outline: #6E6 solid 3px;
+  color: #6E6;
+}
+
+button[disabled],
+button:disabled {
+  color: black;
+  outline: none;
+}
+
+
+/*/  Dialog Boxes  /*/
+/*//////////////////*/
+dialog {
+  padding: 1em 1.75em;
+  background-color: #222;
+  color: #AAA;
+  border: 2px solid #AAA;
+  border-radius: 10px;
+}
+
+
+/*/  Button Style Changes In Dialogs  /*/
+/*/////////////////////////////////////*/
+dialog button {
+  background-color: black;
+  color: #AAA;
+}
+
+dialog button[disabled],
+dialog button:disabled {
+  color: #333;
+  /*outline: none;*/
+}
+
+
+/*/  Label Style In Dialogs  /*/
+/*////////////////////////////*/
+dialog label {
+  display: inline-block;
+  margin-bottom: 0.15em;
+  color: #AAA;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.25em;
+  user-select: none;
+}
+
+
+/*/  Text Input Style In Dialogs  /*/
+/*/////////////////////////////////*/
+dialog input[type="text"] {
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  background-color: black;
+  color: #AAA;
+  border-radius: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5em;
+  /*text-align: inherit;*/
+  padding: 0.2em;
+}
+
+dialog input[type="text"]:focus {
+  outline: #AAA solid 1px;
+}
+
+
+/**  Make a DIV's contents (here: Label & TextInput pairs) centered.  **/
+.content-centering {
+  text-align: center;
+}
+
+.content-centering > input[type="text"] {
+  text-align: inherit;
+}
+
+
+/**  Make a nice row of the few usual Dialog Buttons, and add margins.  **/
+.button-content-row {
+  display: flex;
+}
+
+.button-content-row > button {
+  margin: 0 0.5em;
+}

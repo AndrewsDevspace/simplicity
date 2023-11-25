@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Simplicity</title>
+    <link rel="stylesheet" href="./styling/static.css" />
+    <link rel="stylesheet" href="./styling/generic.css" />
     <link rel="stylesheet" href="./styling/index.css" />
   </head>
   <body>
     <div id="normal-game-screen" class="not-displayed">
-      <div id="splash-welcome-container">
-        <div id="splash-welcome">
+      <div id="welcome-splash-container">
+        <div id="welcome-splash">
           <img src="./assets/welcome.png" alt="Simplicity: another city builder." />
-          <div id="splash-menu">
+          <div id="welcome-menu">
             <button id="newcity-button">Found New City</button>
             <button id="loadcity-button" disabled>Load Saved City</button>
           </div>
         </div>
       </div>
 
-      <div id="dialogbox-container" class="not-displayed">
+      <div id="dialog-container" class="not-displayed">
         <dialog id="new-city-dialog">
           <form>
-            <div class="center-label-text">
+            <div class="content-centering">
               <label for="new-city-input-name">Name Your New City</label><br />
               <input type="text" id="new-city-input-name" name="cityname" autofocus required maxlength="16" />
             </div>
-            <div class="row-of-buttons">
+            <div class="button-content-row">
               <button type="submit" id="new-city-found" disabled>Found City</button>
               <button type="button" id="new-city-cancel">Cancel</button>
             </div>
@@ -35,8 +37,8 @@
       </div>
     </div>
 
-    <div id="device-not-supported" class="not-displayed">
-      <img id="splash-crash" src="./assets/crash.png" alt="Crash!" />
+    <div id="device-crash-screen" class="not-displayed">
+      <img id="crash-splash" src="./assets/crash.png" alt="Crash!" />
       <p id="crash-text">
         Your device is not supported.<br />
         Minimum 1600 x 900 display required.<br />

@@ -1,0 +1,92 @@
+
+
+
+/* * * * * * * * * * * * *
+* Static Page Structures *
+* * * * * * * * * * * * */
+
+
+/*/  Basic Element Styling  /*/
+/*///////////////////////////*/
+body {
+  margin: 0;
+  background-color: #222;
+  color: #CCC;
+}
+
+#normal-game-screen {
+  position: relative;
+  height: 100lvh;
+  overflow: hidden;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+
+/*/  Welcome Screen Elements  /*/
+/*/////////////////////////////*/
+#welcome-splash-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  padding: 0 10%;
+}
+
+#welcome-splash {
+  position: relative;
+  width: 100%;
+}
+
+#welcome-splash > img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+
+#welcome-menu {
+  position: absolute;
+  z-index: 1;
+  left: 4%;
+  top: 60%;
+  width: 22%;
+}
+
+
+/*/  Crash Screen Elements  /*/
+/*///////////////////////////*/
+#crash-splash {
+  width: 100%;
+}
+
+#crash-text {
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: calc(0.4em + 1.8vw);
+  margin: 0;
+  padding: 0.25em;
+  background-color: black;
+}
+
+
+/*/  Dialog Structures  /*/
+/*///////////////////////*/
+#dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 5% 20%;
+}

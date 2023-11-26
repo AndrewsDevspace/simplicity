@@ -14,6 +14,17 @@ function validateDisplayDevice() {
   }
 }
 
+function useCustomDialogBoxEventHandling() {
+  // Preventing ESC from doing anything to modal boxes.
+  $("dialog").on("cancel close", function(e) {
+    e.preventDefault();
+  });
+  // Disable messy <dialog> + <form> default events, when some buttons clicked.
+  $("dialog button").on("click", function(e) {
+    e.preventDefault();
+  });
+}
+
 
 
 /* * * * * *
@@ -51,6 +62,10 @@ if (validDisplay) {
   console.log(`LOG validDisplay: (${validDisplay})`);
   console.log('LOG STATUS: gameplay can start.');
 
+  ///  Setup Custom Default Behaviour for Modal Dialogs
+  ///////////////////////////////////////////////////////
+  useCustomDialogBoxEventHandling();
+
   ///  Setup UI Events Handlers.
   ////////////////////////////////
 
@@ -67,28 +82,17 @@ if (validDisplay) {
   });
 
   // Return the City Name on Form Submit & Dialog Close:
-  $("#new-city-found").on("click", function(e) {
-    // messy default form + dialog behaviours, disable it:
-    e.preventDefault();
+  $("#new-city-found").on("click", function() {
     document.querySelector("#new-city-dialog").close(document.querySelector("#new-city-input-name").value);
   });
 
   // Return "" if cancelled new city:
-  $("#new-city-cancel").on("click", function(e) {
-    // messy default form + dialog behaviours, disable it:
-    e.preventDefault();
+  $("#new-city-cancel").on("click", function() {
     document.querySelector("#new-city-dialog").close("");
   });
 
-  // Prevent ESC from having any effect:
-  $("#new-city-dialog").on("cancel", function(e) {
-    e.preventDefault();
-  });
-
   // Save the New City Data, and Start the Simulation:
-  $("#new-city-dialog").on("close", function(e) {
-    // messy default form + dialog behaviours, disable it (ESC also fires close()!):
-    e.preventDefault();
+  $("#new-city-dialog").on("close", function() {
     let cn = document.querySelector("#new-city-dialog").returnValue;
     if (cn !== "") {
       console.log('LOG ACTION: [Found New City] Submitted.');

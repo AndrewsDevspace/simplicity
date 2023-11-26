@@ -76,17 +76,8 @@ img {
 }
 
 
-/*/  Dialog Structures  /*/
-/*///////////////////////*/
-#dialog-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  padding: 5% 20%;
-}
+/*/  Dialog Positioning  /*/
+/*////////////////////////*/
+/*#<...>-dialog {*/
+  /* When the default 'center screen' setup is insufficient. */
+/*}*/

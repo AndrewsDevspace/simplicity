@@ -56,7 +56,6 @@ if (validDisplay) {
 
   // To Open the New City Dialog:
   $("#newcity-button").on("click", function() {
-    $("#dialog-container").removeClass("not-displayed");
     document.querySelector("#new-city-input-name").value = "";
     $("#new-city-found").attr("disabled", "true");
     document.querySelector("#new-city-dialog").showModal();
@@ -92,16 +91,15 @@ if (validDisplay) {
     e.preventDefault();
     let cn = document.querySelector("#new-city-dialog").returnValue;
     if (cn !== "") {
-      cityData.name = cn;
       console.log('LOG ACTION: [Found New City] Submitted.');
+      cityData.name = cn;
       console.log(`LOG cityData.name: (${cityData.name})`);
     } else {
       console.log('LOG ACTION: [Found New City] Cancelled.');
     }
-    $("#dialog-container").addClass("not-displayed");
 
-    if (cityData.name) {
-      setTimeout(startCity, 50);
+    if (cn !== "") {
+      startCity();
     }
   });
 

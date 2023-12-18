@@ -14,16 +14,16 @@ function validateDisplayDevice() {
   }
 }
 
-function useCustomDialogBoxEventHandling() {
-  // Preventing ESC from doing anything to modal boxes.
-  $("dialog").on("cancel close", function(e) {
-    e.preventDefault();
-  });
-  // Disable messy <dialog> + <form> default events, when some buttons clicked.
-  $("dialog button").on("click", function(e) {
-    e.preventDefault();
-  });
-}
+// function useCustomDialogBoxEventHandling() {
+//   // Preventing ESC from doing anything to modal boxes.
+//   $("dialog").on("cancel close", function(e) {
+//     e.preventDefault();
+//   });
+//   // Disable messy <dialog> + <form> default events, when some buttons clicked.
+//   $("dialog button").on("click", function(e) {
+//     e.preventDefault();
+//   });
+// }
 
 
 
@@ -64,16 +64,16 @@ if (validDisplay) {
 
   ///  Setup Custom Default Behaviour for Modal Dialogs
   ///////////////////////////////////////////////////////
-  useCustomDialogBoxEventHandling();
+  // useCustomDialogBoxEventHandling();
 
   ///  Setup UI Events Handlers.
   ////////////////////////////////
 
   // To Open the New City Dialog:
   $("#newcity-button").on("click", function() {
-    document.querySelector("#new-city-input-name").value = "";
+    $("#new-city-input-name")[0].value = "";
     $("#new-city-found").attr("disabled", "true");
-    document.querySelector("#new-city-dialog").showModal();
+    $("#new-city-dialog")[0].showModal();
   });
 
   // To Monitor the City Name Field for Empty String, and Disable the Found Button when Appropriate:
@@ -81,30 +81,25 @@ if (validDisplay) {
     e.target.value === "" ? $("#new-city-found").attr("disabled", "true") : $("#new-city-found").attr("disabled", null);
   });
 
-  // Return the City Name on Form Submit & Dialog Close:
-  $("#new-city-found").on("click", function() {
-    document.querySelector("#new-city-dialog").close(document.querySelector("#new-city-input-name").value);
+  // Log ESC key:
+  $("#new-city-dialog").on("cancel", function(e) {
+    console.log('LOG ACTION: [Found New City] Cancelled (ESC).');
   });
 
-  // Return "" if cancelled new city:
+  // Close the Dialog if Cancel button clicked:
   $("#new-city-cancel").on("click", function() {
-    document.querySelector("#new-city-dialog").close("");
+    $("#new-city-dialog")[0].close();
+    console.log('LOG ACTION: [Found New City] Cancelled (BTN).');
   });
 
   // Save the New City Data, and Start the Simulation:
-  $("#new-city-dialog").on("close", function() {
-    let cn = document.querySelector("#new-city-dialog").returnValue;
-    if (cn !== "") {
-      console.log('LOG ACTION: [Found New City] Submitted.');
-      cityData.name = cn;
-      console.log(`LOG cityData.name: (${cityData.name})`);
-    } else {
-      console.log('LOG ACTION: [Found New City] Cancelled.');
-    }
+  $("#new-city-dialog > form").on("submit", function(e) {
+    console.log('LOG ACTION: [Found New City] Submitted.');
 
-    if (cn !== "") {
-      startCity();
-    }
+    cityData.name = $("#new-city-input-name")[0].value;
+    console.log(`LOG cityData.name: (${cityData.name})`);
+
+    startCity();
   });
 
   $("#loadcity-button").on("click", function() {});   //is disabled for now...

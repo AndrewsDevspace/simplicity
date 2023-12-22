@@ -14,6 +14,48 @@ function validateDisplayDevice() {
   }
 }
 
+async function validateLocalStorage() {
+  if (localStorage) {
+    try {
+      const est = await navigator.storage.estimate();
+      console.log(`Maximum Local Storage: (~${Math.floor(est.quota / 1024 / 1024)} MB)`);
+      console.log(`Used Local Storage: (~${Math.floor(est.usage / 1024 / 1024)} MB)`);
+
+      let per = await navigator.storage.persisted();
+      if (!per) {
+        console.log("Requesting Persistence.");
+        per = await navigator.storage.persist();
+        if (per) {
+          console.log("Persistence Granted.");
+          localStorageReliable = true;
+        } else {
+          console.log("Persistence Denied.");
+        }
+      } else {
+        console.log("Local Storage is already made Persistent.");
+        localStorageReliable = true;
+      }
+
+      
+    } catch (e) {
+      console.error(e);
+      console.warn("Saving games may not be reliable!");
+    } finally {
+      localStorageUsable = true;
+    }
+  }
+}
+
+// async function checkLS() {
+//   const res = await navigator.storage.persisted();
+//   if (res) {
+//     console.log("LS is persisted.");
+//   } else {
+//     console.log("LS is NOT persisted.");
+//   }
+//   console.log("WHAT?");
+// }
+
 // function useCustomDialogBoxEventHandling() {
 //   // Preventing ESC from doing anything to modal boxes.
 //   $("dialog").on("cancel close", function(e) {
@@ -31,6 +73,15 @@ function validateDisplayDevice() {
 * Game Data *
 * * * * *  */
 
+// Application:
+let
+  localStorageUsable = false,
+  localStorageReliable = false;   // unused...
+const
+  saveCountMax = 5,
+  saveSizeMax = 1000000;
+
+// Game World:
 let cityData = {
   name: undefined
 };
@@ -62,6 +113,16 @@ if (validDisplay) {
   console.log(`LOG validDisplay: (${validDisplay})`);
   console.log('LOG STATUS: gameplay can start.');
 
+  ///  Check Browser Local Storage Stats
+  ////////////////////////////////////////
+  validateLocalStorage().then(() => {
+    if (localStorageUsable) {
+      console.log("Local Storage Ready!");
+
+      $("#loadcity-button").on("click", function() {});   //is disabled for now...
+    }
+  });
+  
   ///  Setup Custom Default Behaviour for Modal Dialogs
   ///////////////////////////////////////////////////////
   // useCustomDialogBoxEventHandling();
@@ -101,6 +162,4 @@ if (validDisplay) {
 
     startCity();
   });
-
-  $("#loadcity-button").on("click", function() {});   //is disabled for now...
 }

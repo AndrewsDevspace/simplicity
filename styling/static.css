@@ -62,11 +62,11 @@ img {
 
 /*/  Crash Screen Elements  /*/
 /*///////////////////////////*/
-#crash-splash {
+.crash-splash {
   width: 100%;
 }
 
-#crash-text {
+.crash-text {
   text-align: right;
   font-family: 'Courier New', Courier, monospace;
   font-size: calc(0.4em + 1.8vw);

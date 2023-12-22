@@ -3,13 +3,13 @@
 * * * * * * * * * */
 
 function validateDisplayDevice() {
-  console.log(`LOG window.screen SIZE: (${window.screen.width},${window.screen.height})`);
+  console.debug(`window.screen Size: (${window.screen.width},${window.screen.height})`);
   if (window.screen.width >= 1600 && window.screen.height >= 900) {
     $("#normal-game-screen").removeClass("not-displayed");
     return true;
   } else {
     $("#device-crash-screen").removeClass("not-displayed");
-    console.log('LOG ERROR: device not supported!');
+    console.error('Device not supported!');
     return false;
   }
 }
@@ -18,43 +18,33 @@ async function validateLocalStorage() {
   if (localStorage) {
     try {
       const est = await navigator.storage.estimate();
-      console.log(`Maximum Local Storage: (~${Math.floor(est.quota / 1024 / 1024)} MB)`);
-      console.log(`Used Local Storage: (~${Math.floor(est.usage / 1024 / 1024)} MB)`);
+      console.debug(`Maximum Local Storage: (~${Math.floor(est.quota / 1024 / 1024)} MB)`);
+      console.debug(`Used Local Storage: (~${Math.floor(est.usage / 1024 / 1024)} MB)`);
 
       let per = await navigator.storage.persisted();
+      console.group("Local Storage Persistence");
       if (!per) {
-        console.log("Requesting Persistence.");
+        console.info("Requesting Persistence.");
         per = await navigator.storage.persist();
         if (per) {
-          console.log("Persistence Granted.");
+          console.info("Persistence Granted.");
           localStorageReliable = true;
         } else {
-          console.log("Persistence Denied.");
+          console.info("Persistence Denied.");
         }
       } else {
-        console.log("Local Storage is already made Persistent.");
+        console.info("Local Storage is already made Persistent.");
         localStorageReliable = true;
       }
-
-      
+      console.groupEnd();
     } catch (e) {
-      console.error(e);
+      console.warn(e);
       console.warn("Saving games may not be reliable!");
     } finally {
       localStorageUsable = true;
     }
   }
 }
-
-// async function checkLS() {
-//   const res = await navigator.storage.persisted();
-//   if (res) {
-//     console.log("LS is persisted.");
-//   } else {
-//     console.log("LS is NOT persisted.");
-//   }
-//   console.log("WHAT?");
-// }
 
 // function useCustomDialogBoxEventHandling() {
 //   // Preventing ESC from doing anything to modal boxes.
@@ -94,7 +84,7 @@ let cityData = {
 
 function startCity() {
   $("#welcome-splash-container").addClass("not-displayed");
-  console.log('LOG STATUS: {StartCity} Executing.');
+  console.debug('{StartCity} Executing.');
 }
 
 
@@ -110,14 +100,14 @@ const validDisplay = validateDisplayDevice();
 ///  Initialize.
 //////////////////
 if (validDisplay) {
-  console.log(`LOG validDisplay: (${validDisplay})`);
-  console.log('LOG STATUS: gameplay can start.');
+  console.debug(`validDisplay: (${validDisplay})`);
+  console.info('Gameplay can start!');
 
   ///  Check Browser Local Storage Stats
   ////////////////////////////////////////
   validateLocalStorage().then(() => {
     if (localStorageUsable) {
-      console.log("Local Storage Ready!");
+      console.info("Local Storage Ready!");
 
       $("#loadcity-button").on("click", function() {});   //is disabled for now...
     }
@@ -144,21 +134,21 @@ if (validDisplay) {
 
   // Log ESC key:
   $("#new-city-dialog").on("cancel", function(e) {
-    console.log('LOG ACTION: [Found New City] Cancelled (ESC).');
+    console.debug('ACTION: [Found New City] Cancelled (ESC).');
   });
 
   // Close the Dialog if Cancel button clicked:
   $("#new-city-cancel").on("click", function() {
     $("#new-city-dialog")[0].close();
-    console.log('LOG ACTION: [Found New City] Cancelled (BTN).');
+    console.debug('ACTION: [Found New City] Cancelled (BTN).');
   });
 
   // Save the New City Data, and Start the Simulation:
   $("#new-city-dialog > form").on("submit", function(e) {
-    console.log('LOG ACTION: [Found New City] Submitted.');
+    console.info('ACTION: [Found New City] Submitted.');
 
     cityData.name = $("#new-city-input-name")[0].value;
-    console.log(`LOG cityData.name: (${cityData.name})`);
+    console.debug(`cityData.name: (${cityData.name})`);
 
     startCity();
   });

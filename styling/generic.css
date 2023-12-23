@@ -51,6 +51,17 @@ dialog {
 }
 
 
+/*/  Dialog Headers  /*/
+/*////////////////////*/
+dialog > form > h2 {
+  margin: 0;
+  min-width: max-content;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2em;
+  color: var(--dialog-head-color);
+}
+
+
 /*/  Button Style Changes In Dialogs  /*/
 /*/////////////////////////////////////*/
 dialog button {
@@ -66,12 +77,68 @@ dialog button:disabled {
 
 /*/  Label Style In Dialogs  /*/
 /*////////////////////////////*/
+.radio-container {
+  position: relative;
+}
+
+.radio-container + .radio-container {
+  margin-top: 1em;
+}
+
 dialog label {
-  display: inline-block;
-  margin-bottom: 0.15em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.25em;
   user-select: none;
+}
+
+dialog label.input-text {
+  display: inline-block;
+  margin-bottom: 0.15em;
+}
+
+dialog label.input-radio {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  background-color: var(--dia-ctrl-back-color);
+  color: inherit;
+  padding: 0.2em;
+  border: none;
+  border-radius: 5px;
+}
+
+dialog input[name="slot"] {
+  display: inline-block;
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+dialog input[name="slot"]:focus + label {
+  outline: var(--default-foc-b-color) solid 1px;
+}
+
+dialog input[name="slot"]:hover + label {
+  outline: var(--default-hover-color) solid 2px;
+  color: var(--default-hover-color);
+}
+
+dialog input[name="slot"]:active + label {
+  outline: var(--default-active-color) solid 3px;
+  color: var(--default-active-color);
+}
+
+dialog input[name="slot"]:checked + label {
+  background-color: var(--dia-ctrl-chck-bg-color);
+  color: var(--default-checked-color);
+}
+
+dialog input[name="slot"]:disabled + label {
+  color: var(--dia-ctrl-dis-f-color);
+  outline: none;
 }
 
 
@@ -99,7 +166,7 @@ dialog input[type="text"]:focus {
   text-align: center;
 }
 
-.content-centering > input[type="text"] {
+.content-centering input[type="text"] {
   text-align: inherit;
 }
 

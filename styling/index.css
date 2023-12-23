@@ -16,7 +16,8 @@
 
 /*/  Dialog Box Elements  /*/
 /*/////////////////////////*/
-#new-city-dialog form {
+#new-city-dialog form,
+#load-city-dialog form {
   display: flex;
   flex-direction: column;
   gap: 2em;

@@ -16,16 +16,21 @@
         <div id="welcome-splash">
           <img src="./assets/welcome.png" alt="Simplicity: another city builder." />
           <div id="welcome-menu">
-            <button id="newcity-button">Found New City</button>
+            <button id="newcity-button" disabled>Found New City</button>
             <button id="loadcity-button" disabled>Load Saved City</button>
           </div>
         </div>
       </div>
 
+      <div id="gameplay-test-surface" class="not-displayed">
+        <p></p>
+        <button id="menu-btn" type="button">Menu</button>
+      </div>
+
       <dialog id="new-city-dialog">
         <form method="dialog" novalidate autocomplete="off">
           <div class="content-centering">
-            <label for="new-city-input-name">Name Your New City</label><br />
+            <label class="input-text" for="new-city-input-name">Name Your New City</label><br />
             <input type="text" id="new-city-input-name" name="cityname" autofocus required maxlength="16" />
           </div>
           <div class="button-content-row">
@@ -33,6 +38,47 @@
             <button type="button" id="new-city-cancel">Cancel</button>
           </div>
         </form>
+      </dialog>
+
+      <dialog id="load-city-dialog">
+        <form method="dialog" novalidate autocomplete="off">
+          <h2 class="content-centering">Select Save Slot</h2>
+          <div class="content-centering">
+            <div class="radio-container">
+              <input type="radio" id="s0" name="slot" value="0" />
+              <label class="input-radio" for="s0"></label>
+            </div>
+            <div class="radio-container">
+              <input type="radio" id="s1" name="slot" value="1" />
+              <label class="input-radio" for="s1"></label>
+            </div>
+            <div class="radio-container">
+              <input type="radio" id="s2" name="slot" value="2" />
+              <label class="input-radio" for="s2"></label>
+            </div>
+            <div class="radio-container">
+              <input type="radio" id="s3" name="slot" value="3" />
+              <label class="input-radio" for="s3"></label>
+            </div>
+            <div class="radio-container">
+              <input type="radio" id="s4" name="slot" value="4" />
+              <label class="input-radio" for="s4"></label>
+            </div>
+          </div>
+          <div class="button-content-row">
+            <button type="submit" id="load-city-submit">Load City</button>
+            <button type="button" id="load-city-delete">Delete</button>
+            <button type="button" id="load-city-cancel">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+
+      <dialog id="save-city-dialog">
+        <div class="button-content-row">
+          <button type="button" id="save-city-save">Save & Quit</button>
+          <button type="button" id="save-city-quit">Quit</button>
+          <button type="button" id="save-city-cancel">Cancel</button>
+        </div>
       </dialog>
     </div>
 

@@ -17,6 +17,7 @@
   --default-hover-color: #A86;
   --default-active-color: #CA8;
   --default-checked-color: #FDB;
+  --speed-checked-color: #FED;
 
   --dialog-back-color: #222;
   --dialog-fore-color: #AAA;
@@ -24,5 +25,6 @@
 
   --dia-ctrl-back-color: black;
   --dia-ctrl-chck-bg-color: #210;
+  --speed-chck-bg-color: #420;
   --dia-ctrl-dis-f-color: #420;
 }

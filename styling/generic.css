@@ -59,33 +59,48 @@ dialog > form > h2 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2em;
   color: var(--dialog-head-color);
+  user-select: none;
 }
 
 
 /*/  Button Style Changes In Dialogs  /*/
 /*/////////////////////////////////////*/
-dialog button {
+dialog button,
+.cityview-control-container button {
   background-color: var(--dia-ctrl-back-color);
   color: inherit;
 }
 
+.cityview-control-container button:focus {
+  outline: none;
+}
+
+.cityview-control-container button:hover {
+  outline: var(--default-hover-color) solid 2px;
+  color: var(--default-hover-color);
+}
+
+.cityview-control-container button:active {
+  outline: var(--default-active-color) solid 3px;
+  color: var(--default-active-color);
+}
+
 dialog button[disabled],
-dialog button:disabled {
+dialog button:disabled,
+.cityview-control-container button[disabled],
+.cityview-control-container button:disabled {
   color: var(--dia-ctrl-dis-f-color);
+}
+
+#cityview-topcontrols #menu-button {
+  padding: 0.3em;
 }
 
 
 /*/  Label Style In Dialogs  /*/
 /*////////////////////////////*/
-.radio-container {
-  position: relative;
-}
-
-.radio-container + .radio-container {
-  margin-top: 1em;
-}
-
-dialog label {
+dialog label,
+.cityview-control-container label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.25em;
   user-select: none;
@@ -96,10 +111,23 @@ dialog label.input-text {
   margin-bottom: 0.15em;
 }
 
-dialog label.input-radio {
+
+/*/  Custom Radio Buttons  /*/
+/*//////////////////////////*/
+.radio-container-dialog,
+.radio-container-speed {
+  position: relative;
+}
+
+.radio-container-dialog + .radio-container-dialog {
+  margin-top: 1em;
+}
+
+dialog label.input-radio,
+.cityview-control-container label,
+.cityview-control-container label.input-radio {
   display: inline-block;
   box-sizing: border-box;
-  width: 100%;
   margin: 0;
   background-color: var(--dia-ctrl-back-color);
   color: inherit;
@@ -108,7 +136,15 @@ dialog label.input-radio {
   border-radius: 5px;
 }
 
-dialog input[name="slot"] {
+.cityview-control-container label {
+  padding: 0.5em 3em;
+  min-width: max-content;
+}
+.cityview-control-container label.input-radio {
+  padding: 0.3em;
+}
+
+input[type="radio"] {
   display: inline-block;
   user-select: none;
   position: absolute;
@@ -117,29 +153,38 @@ dialog input[name="slot"] {
   opacity: 0;
 }
 
-dialog input[name="slot"]:focus + label {
+input[type="radio"]:focus + label {
   outline: var(--default-foc-b-color) solid 1px;
 }
 
-dialog input[name="slot"]:hover + label {
+input[type="radio"]:hover + label {
   outline: var(--default-hover-color) solid 2px;
   color: var(--default-hover-color);
 }
 
-dialog input[name="slot"]:active + label {
+input[type="radio"]:active + label {
   outline: var(--default-active-color) solid 3px;
   color: var(--default-active-color);
 }
 
-dialog input[name="slot"]:checked + label {
+input[type="radio"]:checked + label {
   background-color: var(--dia-ctrl-chck-bg-color);
   color: var(--default-checked-color);
 }
 
-dialog input[name="slot"]:disabled + label {
+input[type="radio"]:disabled + label {
   color: var(--dia-ctrl-dis-f-color);
   outline: none;
   letter-spacing: 0.5em;
+}
+
+.cityview-control-container input[type="radio"]:focus + label {
+  outline: none;
+}
+
+.cityview-control-container input[type="radio"]:checked + label {
+  background-color: var(--speed-chck-bg-color);
+  color: var(--speed-checked-color);
 }
 
 

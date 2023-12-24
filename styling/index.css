@@ -23,7 +23,7 @@
   gap: 2em;
 }
 
-#new-city-input-name {
+.full-width-input {
   width: 100%;
 }
 

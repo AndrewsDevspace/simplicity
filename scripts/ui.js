@@ -41,12 +41,12 @@ function enterCityView() {
   $("#welcome-splash-container").addClass("not-displayed");
   console.debug('{StartCity} Executing.');
 
-  $("#gameplay-test-surface").removeClass("not-displayed");
-  $("#gameplay-test-surface > p").text('Test City: "' + cityData.name + '"');
+  $("#gamearea-cityview").removeClass("not-displayed");
+  $("#cityname-label").text(cityData.name);
 }
 
 function leaveCityView() {
-  $("#gameplay-test-surface").addClass("not-displayed");
+  $("#gamearea-cityview").addClass("not-displayed");
   $("#welcome-splash-container").removeClass("not-displayed");
 }
 

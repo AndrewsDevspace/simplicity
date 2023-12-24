@@ -121,7 +121,7 @@ if (validateDisplayDevice()) {
   });
 
   // Show Save City Dialog:
-  $("#menu-btn").on("click", function() {
+  $("#menu-button").on("click", function() {
     if (!localStorageUsable) {
       $("#save-city-save").attr("disabled", "true");
     } else {

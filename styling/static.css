@@ -24,6 +24,12 @@ img {
   margin-bottom: -4px;
 }
 
+svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
 
 /*/  Welcome Screen Elements  /*/
 /*/////////////////////////////*/
@@ -60,6 +66,34 @@ img {
 }
 
 
+/*/  Game Area - City View  /*/
+/*///////////////////////////*/
+#gamearea-cityview {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#cityview-topcontrols {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 1em 2em 0 2em;
+}
+
+#cityview-topcontrols > * {
+  flex: 1;
+}
+
+#speed-controls {
+  display: inline-flex;
+  gap: 0.5em;
+}
+
+
 /*/  Crash Screen Elements  /*/
 /*///////////////////////////*/
 .crash-splash {
@@ -75,9 +109,3 @@ img {
   background-color: var(--crash-screen-bg-color);
 }
 
-
-/*/  Dialog Positioning  /*/
-/*////////////////////////*/
-/*#<...>-dialog {*/
-  /* When the default 'center screen' setup is insufficient. */
-/*}*/

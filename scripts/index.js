@@ -130,9 +130,14 @@ if (validateDisplayDevice()) {
     $("#save-city-dialog")[0].showModal();
   });
 
-  // To Monitor the City Name Field for Empty String, and Disable the Found Button when Appropriate:
+  // To Monitor the City Name Field for Empty String & Existing Names, and Disable the Found Button when Appropriate:
   $("#new-city-input-name").on("input", function(e) {
-    e.target.value === "" ? $("#new-city-found").attr("disabled", "true") : $("#new-city-found").attr("disabled", null);
+    let cn = e.target.value;
+    if (cn === "" || SaveDataHeader.cityHeaders.findIndex(item => item.name == cn) > -1) {
+      $("#new-city-found").attr("disabled", "true");
+    } else {
+      $("#new-city-found").attr("disabled", null);
+    }
   });
   // Enable Load City only once a Slot radio button is checked:
   $('#load-city-dialog input[name="slot"]').on("change", function(e) {

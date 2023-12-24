@@ -1,119 +1,3 @@
-/* * * * * * * * * *
-* Utility Functions *
-* * * * * * * * * */
-
-function validateDisplayDevice() {
-  console.debug(`window.screen Size: (${window.screen.width},${window.screen.height})`);
-  if (window.screen.width >= 1600 && window.screen.height >= 900) {
-    $("#normal-game-screen").removeClass("not-displayed");
-    return true;
-  } else {
-    $("#device-crash-screen").removeClass("not-displayed");
-    console.error('Device not supported!');
-    return false;
-  }
-}
-
-async function validateLocalStorage() {
-  if (localStorage) {
-    try {
-      const est = await navigator.storage.estimate();
-      console.debug(`Maximum Local Storage: (~${Math.floor(est.quota / 1024 / 1024)} MB)`);
-      console.debug(`Used Local Storage: (~${Math.floor(est.usage / 1024 / 1024)} MB)`);
-
-      let per = await navigator.storage.persisted();
-      console.group("Local Storage Persistence");
-      if (!per) {
-        console.info("Requesting Persistence.");
-        per = await navigator.storage.persist();
-        if (per) {
-          console.info("Persistence Granted.");
-          localStorageReliable = true;
-        } else {
-          console.info("Persistence Denied.");
-        }
-      } else {
-        console.info("Local Storage is already made Persistent.");
-        localStorageReliable = true;
-      }
-      console.groupEnd();
-    } catch (e) {
-      console.warn(e);
-      console.warn("Saving games may not be reliable!");
-    } finally {
-      localStorageUsable = true;
-    }
-  }
-}
-
-function saveReadHeader() {
-  SaveDataHeader.cityHeaders = JSON.parse(localStorage.getItem("cities") || '[]');
-}
-
-function saveRead() {
-  if (currentSaveSlot >= SaveDataHeader.cityHeaders.length) {
-    throw new Error("Trying to load from non-existent Save Slot!");
-  } else {
-    cityData = JSON.parse(localStorage.getItem("save_" + currentSaveSlot));
-  }
-}
-
-function saveWrite() {
-  if (currentSaveSlot == SaveDataHeader.cityHeaders.length) {
-    SaveDataHeader.cityHeaders.push({ name: cityData.name });
-  } else {
-    SaveDataHeader.cityHeaders[currentSaveSlot].name = cityData.name;
-  }
-
-  try {
-    localStorage.setItem("cities", JSON.stringify(SaveDataHeader.cityHeaders));
-    localStorage.setItem("save_" + currentSaveSlot, JSON.stringify(cityData));
-  } catch (e) {
-    console.error(e);
-    SaveDataHeader.cityHeaders[currentSaveSlot].name = "";  //basic undo of save attempt, destroys previous save
-    // Error pop-up for user...
-  }
-  
-  updateMainMenuButtons();
-}
-
-// function useCustomDialogBoxEventHandling() {
-//   // Preventing ESC from doing anything to modal boxes.
-//   $("dialog").on("cancel close", function(e) {
-//     e.preventDefault();
-//   });
-//   // Disable messy <dialog> + <form> default events, when some buttons clicked.
-//   $("dialog button").on("click", function(e) {
-//     e.preventDefault();
-//   });
-// }
-
-function updateMainMenuButtons() {
-  if (SaveDataHeader.usedSaveSlots() > 0) {
-    $("#loadcity-button").attr("disabled", null);
-  } else {
-    $("#loadcity-button").attr("disabled", "true");
-  }
-
-  if (SaveDataHeader.usedSaveSlots() < 5) {
-    $("#newcity-button").attr("disabled", null);
-  } else {
-    $("#newcity-button").attr("disabled", "true");
-  }
-}
-
-function updateLoadDialogButtonsEnabled(bool) {
-  if (bool) {
-    $("#load-city-submit").attr("disabled", null);
-    $("#load-city-delete").attr("disabled", null);
-  } else {
-    $("#load-city-submit").attr("disabled", "true");
-    $("#load-city-delete").attr("disabled", "true");
-  }
-}
-
-
-
 /* * * * * *
 * Game Data *
 * * * * *  */
@@ -170,36 +54,14 @@ let cityData = {
 
 
 
-/* * * * * * * *
-* Gameplay Init *
-* * * * * * * */
-
-function startCity() {
-  $("#welcome-splash-container").addClass("not-displayed");
-  console.debug('{StartCity} Executing.');
-
-  $("#gameplay-test-surface").removeClass("not-displayed");
-  $("#gameplay-test-surface > p").text('Test City: "' + cityData.name + '"');
-}
-
-function leaveCity() {
-  $("#gameplay-test-surface").addClass("not-displayed");
-  $("#welcome-splash-container").removeClass("not-displayed");
-}
-
 
 /* * * * * * *
 * System Init *
 * * * * * * */
 
-///  Check display resolution.
-////////////////////////////////
-const validDisplay = validateDisplayDevice();
-
 ///  Initialize.
 //////////////////
-if (validDisplay) {
-  console.debug(`validDisplay: (${validDisplay})`);
+if (validateDisplayDevice()) {
   console.info('Gameplay can start!');
 
   ///  Check Browser Local Storage Stats
@@ -313,8 +175,8 @@ if (validDisplay) {
     $('#load-city-dialog label[for="s' + i + '"]')[0].innerHTML = "EMPTY SLOT";
 
     SaveDataHeader.cityHeaders[i].name = "";
-    localStorage.removeItem("save_" + i);
-    localStorage.setItem("cities", JSON.stringify(SaveDataHeader.cityHeaders));
+    saveSlotDelete(i);
+    saveWriteHeader();
 
     updateMainMenuButtons();
   });
@@ -331,7 +193,7 @@ if (validDisplay) {
     cityData.name = $("#new-city-input-name")[0].value;
     console.debug(`cityData.name: (${cityData.name})`);
 
-    startCity();
+    enterCityView();
   });
 
   // Load old city data, start the simulation:
@@ -339,7 +201,7 @@ if (validDisplay) {
     console.info('ACTION: [Load Old City] Submitted.');
     currentSaveSlot = $('#load-city-dialog input[name="slot"]:checked')[0].value;
     saveRead();
-    startCity();
+    enterCityView();
   });
 
   // Handle Save & Quit @ Save City Dialog:
@@ -347,12 +209,12 @@ if (validDisplay) {
     $("#save-city-dialog")[0].close();
     // Save the game-state:
     saveWrite();
-    leaveCity();
+    leaveCityView();
   });
 
   // Handle Quit Only @ Save City Dialog:
   $("#save-city-quit").on("click", function() {
     $("#save-city-dialog")[0].close();
-    leaveCity();
+    leaveCityView();
   });
 }

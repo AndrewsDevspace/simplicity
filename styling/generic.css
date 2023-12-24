@@ -139,6 +139,7 @@ dialog input[name="slot"]:checked + label {
 dialog input[name="slot"]:disabled + label {
   color: var(--dia-ctrl-dis-f-color);
   outline: none;
+  letter-spacing: 0.5em;
 }
 
 

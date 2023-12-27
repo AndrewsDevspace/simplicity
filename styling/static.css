@@ -21,7 +21,7 @@ body {
 }
 
 img {
-  margin-bottom: -4px;
+  display: block;
 }
 
 svg {

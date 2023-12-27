@@ -127,6 +127,7 @@ if (validateDisplayDevice()) {
     } else {
       $("#save-city-save").attr("disabled", null);
     }
+    removeFocus($("#menu-button")[0]);
     $("#save-city-dialog")[0].showModal();
   });
 
@@ -207,6 +208,11 @@ if (validateDisplayDevice()) {
     currentSaveSlot = $('#load-city-dialog input[name="slot"]:checked')[0].value;
     saveRead();
     enterCityView();
+  });
+
+  $('input[name="speed"]').on("click", function(e) {
+    //... Set game speed...
+    removeFocus(this);
   });
 
   // Handle Save & Quit @ Save City Dialog:

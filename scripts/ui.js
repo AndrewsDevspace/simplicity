@@ -2,6 +2,10 @@
 * User Interface Helpers *
 * * * * * * * * * * * * */
 
+function removeFocus(element) {
+  element.blur();
+}
+
 function updateMainMenuButtons() {
   if (localStorageUsable && SaveDataHeader.usedSaveSlots() > 0) {
     $("#loadcity-button").attr("disabled", null);

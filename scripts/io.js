@@ -15,6 +15,16 @@ function saveRead() {
     throw new Error("Trying to load from non-existent Save Slot!");
   } else {
     cityData = JSON.parse(localStorage.getItem("save_" + currentSaveSlot));
+    if (cityData.credits === undefined) {
+      cityData.credits = 100;
+    }
+    if (cityData.date === undefined) {
+      cityData.date = {
+        year: 2000,
+        month: 1,
+        day: 1
+      };
+    }
   }
 }
 
@@ -30,7 +40,7 @@ function saveWrite() {
     localStorage.setItem("save_" + currentSaveSlot, JSON.stringify(cityData));
   } catch (e) {
     console.error(e);
-    SaveDataHeader.cityHeaders[currentSaveSlot].name = "";  //basic undo of save attempt, destroys previous save
+    //SaveDataHeader.cityHeaders[currentSaveSlot].name = "";  //basic undo of save attempt, destroys previous save
     // Error pop-up for user...
   }
   
@@ -38,5 +48,6 @@ function saveWrite() {
 }
 
 function saveSlotDelete(i) {
+  SaveDataHeader.cityHeaders[i].name = "";
   localStorage.removeItem("save_" + i);
 }

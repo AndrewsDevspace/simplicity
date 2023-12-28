@@ -28,6 +28,19 @@
 }
 
 
+/*/  City View Elements  /*/
+/*////////////////////////*/
+#creditbalance-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.75em;
+  font-style: italic;
+  color: var(--credits-gold);
+}
+
+/*#gamedate-label {
+  font-weight: bold;
+}*/
+
 
 /* * * * * * * * *
 * Dynamic Styles *
@@ -35,4 +48,9 @@
 .not-displayed {
   display: none;
   visibility: hidden;
+}
+
+.in-debt {
+  color: var(--credits-red);
+  font-weight: bold;
 }

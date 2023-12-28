@@ -41,12 +41,33 @@ function updateLoadDialogButtonsEnabled(bool) {
 //   });
 // }
 
+function updateCreditBalanceLabel() {
+  let label = $("#creditbalance-label");
+  let credits = cityData.credits;
+
+  //Format number: group 3 digits by ' '...
+  if (credits < 0) {
+    label.text("$ " + Math.abs(credits));
+    label.addClass("in-debt");
+  } else {
+    label.text("$ " + credits);
+    label.removeClass("in-debt");
+  }
+}
+
+function updateGameDateLabel() {
+  let date = cityData.date;
+  $("#gamedate-label").text(`${date.year} / ${date.month} / ${date.day}`);
+}
+
 function enterCityView() {
   $("#welcome-splash-container").addClass("not-displayed");
   console.debug('{StartCity} Executing.');
 
   $("#gamearea-cityview").removeClass("not-displayed");
   $("#cityname-label").text(cityData.name);
+  updateCreditBalanceLabel();
+  updateGameDateLabel();
 }
 
 function leaveCityView() {

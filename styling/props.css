@@ -18,6 +18,7 @@
   --default-active-color: #CA8;
   --default-checked-color: #FDB;
   --speed-checked-color: #FED;
+  /*--tool-toggled-color: #FFF;*/
 
   --dialog-back-color: #222;
   --dialog-fore-color: #AAA;
@@ -26,5 +27,9 @@
   --dia-ctrl-back-color: black;
   --dia-ctrl-chck-bg-color: #210;
   --speed-chck-bg-color: #420;
+  --tool-tgld-bg-color: #630;
   --dia-ctrl-dis-f-color: #420;
+
+  --credits-gold: #EC0;
+  --credits-red: #E44;
 }

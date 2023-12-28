@@ -93,6 +93,18 @@ svg {
   gap: 0.5em;
 }
 
+#cityview-citystats {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 1.5em;
+  margin: 0em 2em 1em 2em;
+}
+
 
 /*/  Crash Screen Elements  /*/
 /*///////////////////////////*/

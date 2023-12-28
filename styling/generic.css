@@ -188,6 +188,46 @@ input[type="radio"]:disabled + label {
 }
 
 
+/*/  Custom Toolbox-Toggler Buttons  /*/
+/*////////////////////////////////////*/
+button.toolbox-toggler {
+  color: var(--speed-checked-color);
+  background-color: var(--speed-chck-bg-color);
+}
+button.toolbox-toggler:hover {
+  color: var(--speed-checked-color);
+  outline: var(--speed-checked-color) solid 2px;
+}
+button.toolbox-toggler:disabled {
+  color: var(--dia-ctrl-dis-f-color);
+  background-color: var(--dia-ctrl-back-color);
+  outline: var(--dia-ctrl-dis-f-color) solid 2px;
+}
+
+button.toolbox-toggler.toggled {
+  outline: var(--speed-checked-color) solid 2px;
+}
+button.toolbox-toggler.toggled:hover {
+  background-color: var(--tool-tgld-bg-color);
+}
+button.toolbox-toggler.toggled:disabled {
+  color: var(--dia-ctrl-dis-f-color);
+  background-color: var(--dia-ctrl-back-color);
+  outline: var(--dia-ctrl-dis-f-color) solid 2px;
+}
+
+button.toolbox-toggler.tool-toggler-up {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+button.toolbox-toggler.tool-toggler-up.toggled {
+  border-radius: 5px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+
 /*/  Text Input Style In Dialogs  /*/
 /*/////////////////////////////////*/
 dialog input[type="text"] {
@@ -224,4 +264,23 @@ dialog input[type="text"]:focus {
 
 .button-content-row > button {
   margin: 0 0.5em;
+}
+
+
+/**  Container Formatting  **/
+.cityview-toolbox {
+  background-color: var(--dia-ctrl-back-color);
+  color: inherit;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  min-width: max-content;
+}
+
+.cityview-toolbox span {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.25em;
+  user-select: none;
 }

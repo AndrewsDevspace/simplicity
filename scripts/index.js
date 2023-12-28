@@ -49,9 +49,19 @@ let currentSaveSlot = undefined;
 
 // Game World:
 let cityData = {
-  name: undefined
+  name: undefined,
+  credits: undefined,
+  date: {
+    year: undefined,
+    month: undefined,
+    day: undefined
+  }
 };
 
+function addCredits(value) {
+  cityData.credits += value;
+  updateCreditBalanceLabel();
+}
 
 
 
@@ -180,7 +190,6 @@ if (validateDisplayDevice()) {
     deleting.setAttribute("disabled", "true");
     $('#load-city-dialog label[for="s' + i + '"]')[0].innerHTML = "EMPTY SLOT";
 
-    SaveDataHeader.cityHeaders[i].name = "";
     saveSlotDelete(i);
     saveWriteHeader();
 
@@ -197,8 +206,13 @@ if (validateDisplayDevice()) {
     }
 
     cityData.name = $("#new-city-input-name")[0].value;
-    console.debug(`cityData.name: (${cityData.name})`);
-
+    cityData.credits = 100;
+    cityData.date = {
+      year: 2000,
+      month: 1,
+      day: 1
+    };
+    
     enterCityView();
   });
 
@@ -212,6 +226,16 @@ if (validateDisplayDevice()) {
 
   $('input[name="speed"]').on("click", function(e) {
     //... Set game speed...
+    removeFocus(this);
+  });
+
+  $(".toolbox-toggler").on("click", function(e) {
+    // Toggle the 'toggled' class:
+    this.classList.toggle("toggled");
+  });
+
+  $("#stats-button").on("click", function(e) {
+    //... Show/Hide Detailed Stats Toolbox...
     removeFocus(this);
   });
 

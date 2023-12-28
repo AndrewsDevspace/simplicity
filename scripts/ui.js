@@ -41,6 +41,12 @@ function updateLoadDialogButtonsEnabled(bool) {
 //   });
 // }
 
+function resetToolBoxes() {
+  $(".toolbox-toggler").removeClass("toggled");
+  // Hide actual toolboxes:
+  $(".cityview-toolbox").addClass("hidden");
+}
+
 function updateCreditBalanceLabel() {
   let label = $("#creditbalance-label");
   let credits = cityData.credits;
@@ -64,10 +70,11 @@ function enterCityView() {
   $("#welcome-splash-container").addClass("not-displayed");
   console.debug('{StartCity} Executing.');
 
-  $("#gamearea-cityview").removeClass("not-displayed");
   $("#cityname-label").text(cityData.name);
+  resetToolBoxes();
   updateCreditBalanceLabel();
   updateGameDateLabel();
+  $("#gamearea-cityview").removeClass("not-displayed");
 }
 
 function leaveCityView() {

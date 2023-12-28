@@ -37,17 +37,16 @@
   color: var(--credits-gold);
 }
 
-/*#gamedate-label {
-  font-weight: bold;
-}*/
-
 
 /* * * * * * * * *
 * Dynamic Styles *
 * * * * * * * * */
 .not-displayed {
-  display: none;
-  visibility: hidden;
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden !important;
 }
 
 .in-debt {

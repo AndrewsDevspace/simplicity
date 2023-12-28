@@ -235,7 +235,18 @@ if (validateDisplayDevice()) {
   });
 
   $("#stats-button").on("click", function(e) {
-    //... Show/Hide Detailed Stats Toolbox...
+    // Show/Hide Detailed Stats Toolbox:
+    $("#stats-button").hasClass("toggled") ?
+      $("#cityview-citystats-menu").removeClass("hidden") :
+      $("#cityview-citystats-menu").addClass("hidden");
+    removeFocus(this);
+  });
+
+  $("#planning-button").on("click", function(e) {
+    // Show/Hide City Builder (Planner) Toolbox:
+    $("#planning-button").hasClass("toggled") ?
+      $("#cityview-cityplanning-menu").removeClass("hidden") :
+      $("#cityview-cityplanning-menu").addClass("hidden");
     removeFocus(this);
   });
 

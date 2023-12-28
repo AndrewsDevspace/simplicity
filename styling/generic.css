@@ -227,6 +227,17 @@ button.toolbox-toggler.tool-toggler-up.toggled {
   border-bottom-right-radius: 50%;
 }
 
+button.toolbox-toggler.tool-toggler-down {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+button.toolbox-toggler.tool-toggler-down.toggled {
+  border-radius: 5px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
 
 /*/  Text Input Style In Dialogs  /*/
 /*/////////////////////////////////*/
@@ -268,7 +279,7 @@ dialog input[type="text"]:focus {
 
 
 /**  Container Formatting  **/
-.cityview-toolbox {
+.cityview-toolbox-root {
   background-color: var(--dia-ctrl-back-color);
   color: inherit;
   border-radius: 5px;
@@ -276,11 +287,17 @@ dialog input[type="text"]:focus {
   min-width: max-content;
 }
 
-.cityview-toolbox span {
+.cityview-toolbox-root span {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.25em;
   user-select: none;
+}
+
+.cityview-toolbox {
+  background-color: var(--dia-ctrl-dis-f-color);
+  color: var(--speed-checked-color);
+  overflow: hidden;
 }

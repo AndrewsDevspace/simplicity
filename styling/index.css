@@ -31,10 +31,76 @@
 /*/  City View Elements  /*/
 /*////////////////////////*/
 #creditbalance-label {
-  font-family: 'Times New Roman', Times, serif;
+  /* font-family: 'Times New Roman', Times, serif; */
   font-size: 1.75em;
   font-style: italic;
   color: var(--credits-gold);
+}
+
+#cashflow-label {
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-size: 1em;
+  color: #0E0;
+}
+
+#RCI-container {
+  position: relative;
+  height: 100%;
+  min-height: 3em;
+  max-height: 5em;
+  width: 4em;
+  background-color: var(--graph-back-color);
+  overflow: hidden;
+}
+
+#RCI-zero-line {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--default-fore-color);
+}
+
+.RCI-label {
+  position: absolute;
+  z-index: 0;
+  width: 25%;
+  transform: translateX(-50%);
+}
+
+#RCI-residential {
+  left: 18.75%;
+  /* +100% */
+  top: 0%;
+  bottom: 50%;
+  background-color: #0A0;
+}
+
+#RCI-commercial {
+  left: 50%;
+  /* -50% */
+  top: 50%;
+  bottom: 25%;
+  background-color: #00F;
+}
+
+#RCI-industrial {
+  left: 81.25%;
+  /* +33.333% */
+  top: 33.333%;
+  bottom: 50%;
+  background-color: #E80;
+}
+
+#gamedate-label {
+  font-style: italic;
+}
+
+#population-label {
+  font-weight: bold;
 }
 
 
@@ -52,4 +118,8 @@
 .in-debt {
   color: var(--credits-red);
   font-weight: bold;
+}
+
+.net-loss {
+  color: #F44;
 }

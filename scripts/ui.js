@@ -61,9 +61,17 @@ function updateCreditBalanceLabel() {
   }
 }
 
+function updateCashflowLabel() {
+  //...
+}
+
+function updateRciGraph() {
+  //...
+}
+
 function updateGameDateLabel() {
   let date = cityData.date;
-  $("#gamedate-label").text(`${date.year} / ${date.month} / ${date.day}`);
+  $("#gamedate-label").text(`${date.year}. ${date.month}. ${date.day}.`);
 }
 
 function enterCityView() {

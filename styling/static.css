@@ -30,6 +30,12 @@ svg {
   height: 1em;
 }
 
+span > svg {
+  display: inline;
+  width: 0.8em;
+  height: 0.8em;
+}
+
 
 /*/  Welcome Screen Elements  /*/
 /*/////////////////////////////*/
@@ -106,7 +112,7 @@ svg {
   min-height: 0;
 }
 
-#cityview-ui-stats-container {
+#cityview-ui-planning-container {
   display: inline-flex;
   flex-direction: column-reverse;
   align-items: start;
@@ -116,20 +122,7 @@ svg {
   min-width: 0;
 }
 
-#cityview-citystats {
-  display: inline-flex;
-  align-items: start;
-  gap: 1.5em;
-}
-
-#cityview-citystats-menu {
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
-  max-height: calc(100% - 5em);
-}
-
-#cityview-ui-planning-container {
+#cityview-ui-stats-container {
   display: inline-flex;
   flex-direction: column;
   align-items: end;
@@ -140,15 +133,28 @@ svg {
 
 #cityview-cityplanning {
   display: inline-flex;
+  align-items: start;
+  gap: 1.5em;
+}
+
+#cityview-citystats {
+  display: inline-flex;
   align-items: end;
   gap: 1.5em;
 }
 
-#cityview-cityplanning-menu {
+#cityview-citystats-menu {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap-reverse;
-  max-height: calc(100% - 4em);
+  max-height: calc(100% - 5em);
+}
+
+#cityview-cityplanning-menu {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  max-height: calc(100% - 5em);
 }
 
 

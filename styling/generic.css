@@ -291,7 +291,8 @@ dialog input[type="text"]:focus {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.25em;
   user-select: none;
 }
@@ -300,4 +301,12 @@ dialog input[type="text"]:focus {
   background-color: var(--dia-ctrl-dis-f-color);
   color: var(--speed-checked-color);
   overflow: hidden;
+}
+
+.neutral-emphasized {
+  color: var(--stat-neutral-emph-color);
+}
+
+.positive-emphasized {
+  color: var(--stat-positive-emph-color);
 }

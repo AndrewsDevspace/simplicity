@@ -238,6 +238,28 @@ button.toolbox-toggler.tool-toggler-down.toggled {
   border-top-right-radius: 50%;
 }
 
+button.toolbox-toggler.tool-toggler-right {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+button.toolbox-toggler.tool-toggler-right.toggled {
+  border-radius: 5px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+button.toolbox-toggler.tool-toggler-left {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+button.toolbox-toggler.tool-toggler-left.toggled {
+  border-radius: 5px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
 
 /*/  Text Input Style In Dialogs  /*/
 /*/////////////////////////////////*/
@@ -291,16 +313,60 @@ dialog input[type="text"]:focus {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.25em;
   user-select: none;
 }
 
 .cityview-toolbox {
-  background-color: var(--dia-ctrl-dis-f-color);
-  color: var(--speed-checked-color);
   overflow: hidden;
+  background-color: transparent;
+  min-height: 0;
+}
+
+.planning-toolbox-button-container {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.75em 1em 0.75em 0.5em;
+}
+
+.stats-toolbox-button-container {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.75em 0.5em 0.75em 1em;
+}
+
+.toolbox-decor {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: 1em;
+  background-color: var(--dia-ctrl-back-color);
+}
+
+.planning-toolbox-button-container > .toolbox-decor {
+  left: 0;
+}
+
+.stats-toolbox-button-container > .toolbox-decor {
+  right: 0;
+}
+
+.planning-toolbox-button-container:last-child > .toolbox-decor {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.stats-toolbox-button-container:last-child > .toolbox-decor {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.planning-toolbox-button-container > .toolbox-toggler,
+.stats-toolbox-button-container > .toolbox-toggler {
+  position: relative;
+  z-index: 1;
 }
 
 .neutral-emphasized {

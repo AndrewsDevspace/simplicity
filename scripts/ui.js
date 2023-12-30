@@ -44,7 +44,7 @@ function updateLoadDialogButtonsEnabled(bool) {
 function resetToolBoxes() {
   $(".toolbox-toggler").removeClass("toggled");
   // Hide actual toolboxes:
-  $(".cityview-toolbox").addClass("hidden");
+  $(".cityview-toolbox").addClass("not-displayed");
 }
 
 function updateCreditBalanceLabel() {

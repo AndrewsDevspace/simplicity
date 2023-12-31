@@ -11,40 +11,40 @@
     <link rel="stylesheet" href="./styling/index.css" />
   </head>
   <body>
-    <div id="normal-game-screen" class="not-displayed">
-      <div id="welcome-splash-container">
-        <div id="welcome-splash">
+    <div id="screen-normal" class="not-displayed">
+      <div id="normal-splash-welcome-container">
+        <div id="splash-welcome">
           <img src="./assets/welcome.png" alt="Simplicity: another city builder." />
-          <div id="welcome-menu">
-            <button id="newcity-button" disabled>Found New City</button>
-            <button id="loadcity-button" disabled>Load Saved City</button>
+          <div id="splash-welcome-menu">
+            <button id="welcome-menu-button-new" disabled>Found New City</button>
+            <button id="welcome-menu-button-load" disabled>Load Saved City</button>
           </div>
         </div>
       </div>
 
-      <div id="gamearea-cityview" class="not-displayed">
-        <div id="cityview-ui-topcontainer">
-          <div id="cityview-topcontrols" class="cityview-control-container">
-            <div id="speed-controls">
-              <div class="radio-container-speed">
-                <input type="radio" id="spd0" name="speed" value="paused" tabindex="-1" checked />
-                <label class="input-radio" for="spd0">
+      <div id="normal-gamearea-container" class="not-displayed">
+        <div id="gamearea-ui-container">
+          <div id="ui-top-container" class="ui-controls-modder-prefix">
+            <div id="ui-top-speed-container">
+              <div class="speed-radio-custom-ctn">
+                <input type="radio" id="speed0" name="speed" value="paused" tabindex="-1" checked />
+                <label class="input-radio" for="speed0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
                     <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
                   </svg>
                 </label>
               </div>
-              <div class="radio-container-speed">
-                <input type="radio" id="spd1" name="speed" value="normal" tabindex="-1" />
-                <label class="input-radio" for="spd1">
+              <div class="speed-radio-custom-ctn">
+                <input type="radio" id="speed1" name="speed" value="normal" tabindex="-1" />
+                <label class="input-radio" for="speed1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
                   </svg>
                 </label>
               </div>
-              <div class="radio-container-speed">
-                <input type="radio" id="spd2" name="speed" value="fast" tabindex="-1" />
-                <label class="input-radio" for="spd2">
+              <div class="speed-radio-custom-ctn">
+                <input type="radio" id="speed2" name="speed" value="fast" tabindex="-1" />
+                <label class="input-radio" for="speed2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fast-forward-fill" viewBox="0 0 16 16">
                     <path d="M7.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
                     <path d="M15.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C8.713 12.69 8 12.345 8 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
@@ -53,10 +53,10 @@
               </div>
             </div>
             <div style="text-align: center;">
-              <label id="cityname-label"></label>
+              <label id="ui-top-label-cityname"></label>
             </div>
             <div style="text-align: right;">
-              <button id="menu-button" type="button" tabindex="-1">
+              <button id="ui-top-button-menu" type="button" tabindex="-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                   <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
                   <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
@@ -65,112 +65,112 @@
             </div>
           </div>
 
-          <div id="cityview-ui-tool-container">
-            <div id="cityview-ui-planning-container">
-              <div id="cityview-cityplanning" class="cityview-control-container cityview-toolbox-root">
-                <button id="planning-button" class="toolbox-toggler tool-toggler-up" type="button" tabindex="-1" >
+          <div id="ui-sub-container">
+            <div id="ui-sub-planning-container">
+              <div id="planning-root-container" class="ui-controls-modder-prefix toolbox-root-container">
+                <button id="planning-root-button" class="toolbox-toggler tool-toggler-up" type="button" tabindex="-1" >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-gear" viewBox="0 0 16 16">
                     <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z"/>
                     <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.386 1.46c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
                   </svg>
                 </button>
                 <div>
-                  <span id="creditbalance-label"></span><br />
-                  <span id="cashflow-label">&nbsp;$&nbsp;135790</span><br />
+                  <span id="ui-label-creditbalance"></span><br />
+                  <span id="ui-label-cashflow">&nbsp;$&nbsp;135790</span><br />
                 </div>
-                <div id="RCI-container">
-                  <div id="RCI-zero-line"></div>
-                  <div id="RCI-residential" class="RCI-label"></div>
-                  <div id="RCI-commercial" class="RCI-label"></div>
-                  <div id="RCI-industrial" class="RCI-label"></div>
+                <div id="ui-RCI-container">
+                  <div id="ui-RCI-origo"></div>
+                  <div id="RCI-residential" class="ui-RCI-data"></div>
+                  <div id="RCI-commercial" class="ui-RCI-data"></div>
+                  <div id="RCI-industrial" class="ui-RCI-data"></div>
                 </div>
               </div>
               <!-- Testing panel -->
-              <div id="cityplanning-container" class="cityview-toolbox not-displayed">
-                <div id="cityview-cityplanning-menu">
-                  <div class="planning-toolbox-button-container">
+              <div id="planning-menu-container" class="common-menu-container not-displayed">
+                <div id="planning-menu">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p1" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp1" type="button" tabindex="-1" >p1</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p2" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp2" type="button" tabindex="-1" >p2</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p3" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp3" type="button" tabindex="-1" >p3</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p4" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp4" type="button" tabindex="-1" >p4</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p5" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp5" type="button" tabindex="-1" >p5</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p6" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p6</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p7" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p7</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p8" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p8</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p9" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p9</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p10" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p10</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p11" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p11</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p12" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p12</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p13" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p13</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p14" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p14</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p15" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p15</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p16" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p16</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p17" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p17</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p18" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p18</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p19" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p19</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
+                  <div class="planning-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="p20" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p20</button>
                   </div>
                 </div>
                 <div class="tool-description-container">
-                  <h3 class="content-centering">City Planning</h3>
+                  <h3 class="content-centered">City Planning</h3>
                   <div id="tp1" class="tool-descriptor not-displayed">Plan Tool 1</div>
                   <div id="tp2" class="tool-descriptor not-displayed">Plan Tool 2</div>
                   <div id="tp3" class="tool-descriptor not-displayed">Plan Tool 3</div>
@@ -180,8 +180,8 @@
               </div>
             </div>
 
-            <div id="cityview-ui-stats-container">
-              <div id="cityview-citystats" class="cityview-control-container cityview-toolbox-root">
+            <div id="ui-sub-stats-container">
+              <div id="stats-root-container" class="ui-controls-modder-prefix toolbox-root-container">
                 <div>
                   <span class="neutral-emphasized">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -197,98 +197,98 @@
                   </span>&ensp;
                   <span id="population-label" class="positive-emphasized">234 678</span><br />
                 </div>
-                <button id="stats-button" class="toolbox-toggler tool-toggler-down" type="button" tabindex="-1" >
+                <button id="stats-root-button" class="toolbox-toggler tool-toggler-down" type="button" tabindex="-1" >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-gear" viewBox="0 0 16 16">
                     <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
                   </svg>
                 </button>
               </div>
               <!-- Testing panel -->
-              <div id="citystats-container" class="cityview-toolbox not-displayed">
-                <div id="cityview-citystats-menu">
-                  <div class="stats-toolbox-button-container">
+              <div id="stats-menu-container" class="common-menu-container not-displayed">
+                <div id="stats-menu">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s1" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts1" type="button" tabindex="-1" >s1</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s2" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts2" type="button" tabindex="-1" >s2</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s3" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts3" type="button" tabindex="-1" >s3</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s4" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts4" type="button" tabindex="-1" >s4</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s5" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts5" type="button" tabindex="-1" >s5</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s6" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s6</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s7" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s7</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s8" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s8</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s9" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s9</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s10" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s10</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s11" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s11</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s12" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s12</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s13" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s13</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s14" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s14</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s15" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s15</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s16" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s16</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s17" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s17</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s18" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s18</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s19" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s19</button>
                   </div>
-                  <div class="stats-toolbox-button-container">
+                  <div class="stats-menu-item-container">
                     <div class="toolbox-decor"></div>
                     <button id="s20" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s20</button>
                   </div>
                 </div>
                 <div class="tool-description-container">
-                  <h3 class="content-centering">City Statistics</h3>
+                  <h3 class="content-centered">City Statistics</h3>
                   <div id="ts1" class="tool-descriptor not-displayed">Stat Tool 1</div>
                   <div id="ts2" class="tool-descriptor not-displayed">Stat Tool 2</div>
                   <div id="ts3" class="tool-descriptor not-displayed">Stat Tool 3</div>
@@ -301,45 +301,45 @@
         </div>
       </div>
 
-      <dialog id="new-city-dialog">
+      <dialog id="dialog-new-city">
         <form method="dialog" novalidate autocomplete="off">
-          <div class="content-centering">
+          <div class="content-centered">
             <label class="input-text" for="new-city-input-name">Name Your New City</label><br />
-            <input type="text" id="new-city-input-name" class="full-width-input" name="cityname" autofocus required maxlength="20" />
+            <input type="text" id="new-city-input-name" class="input-full-width" name="cityname" autofocus required maxlength="20" />
           </div>
-          <div class="button-content-row">
+          <div class="content-button-row">
             <button type="submit" id="new-city-found">Found City</button>
             <button type="button" id="new-city-cancel">Cancel</button>
           </div>
         </form>
       </dialog>
 
-      <dialog id="load-city-dialog">
+      <dialog id="dialog-load-city">
         <form method="dialog" novalidate autocomplete="off">
-          <h2 class="content-centering">Select Save Slot</h2>
-          <div class="content-centering">
-            <div class="radio-container-dialog">
-              <input type="radio" id="s0" name="slot" value="0" />
-              <label class="input-radio full-width-input" for="s0"></label>
+          <h2 class="content-centered">Select Save Slot</h2>
+          <div class="content-centered">
+            <div class="dialog-radio-container">
+              <input type="radio" id="slot0" name="slot" value="0" />
+              <label class="input-radio input-full-width" for="slot0"></label>
             </div>
-            <div class="radio-container-dialog">
-              <input type="radio" id="s1" name="slot" value="1" />
-              <label class="input-radio full-width-input" for="s1"></label>
+            <div class="dialog-radio-container">
+              <input type="radio" id="slot1" name="slot" value="1" />
+              <label class="input-radio input-full-width" for="slot1"></label>
             </div>
-            <div class="radio-container-dialog">
-              <input type="radio" id="s2" name="slot" value="2" />
-              <label class="input-radio full-width-input" for="s2"></label>
+            <div class="dialog-radio-container">
+              <input type="radio" id="slot2" name="slot" value="2" />
+              <label class="input-radio input-full-width" for="slot2"></label>
             </div>
-            <div class="radio-container-dialog">
-              <input type="radio" id="s3" name="slot" value="3" />
-              <label class="input-radio full-width-input" for="s3"></label>
+            <div class="dialog-radio-container">
+              <input type="radio" id="slot3" name="slot" value="3" />
+              <label class="input-radio input-full-width" for="slot3"></label>
             </div>
-            <div class="radio-container-dialog">
-              <input type="radio" id="s4" name="slot" value="4" />
-              <label class="input-radio full-width-input" for="s4"></label>
+            <div class="dialog-radio-container">
+              <input type="radio" id="slot4" name="slot" value="4" />
+              <label class="input-radio input-full-width" for="slot4"></label>
             </div>
           </div>
-          <div class="button-content-row">
+          <div class="content-button-row">
             <button type="submit" id="load-city-submit">Load City</button>
             <button type="button" id="load-city-delete">Delete</button>
             <button type="button" id="load-city-cancel">Cancel</button>
@@ -347,18 +347,18 @@
         </form>
       </dialog>
 
-      <dialog id="save-city-dialog">
-        <h2 class="content-centering">Game Menu</h2>
-        <div class="button-content-row">
-          <button type="button" id="save-city-save">Save & Quit</button>
-          <button type="button" id="save-city-quit">Quit</button>
-          <button type="button" id="save-city-cancel">Cancel</button>
+      <dialog id="dialog-game-menu">
+        <h2 class="content-centered">Game Menu</h2>
+        <div class="content-button-row">
+          <button type="button" id="game-menu-save">Save & Quit</button>
+          <button type="button" id="game-menu-quit">Quit</button>
+          <button type="button" id="game-menu-cancel">Cancel</button>
         </div>
       </dialog>
     </div>
 
-    <div id="device-crash-screen" class="not-displayed">
-      <img class="crash-splash" src="./assets/crash.png" alt="Crash!" />
+    <div id="screen-crash" class="not-displayed">
+      <img class="crash-image" src="./assets/crash.png" alt="Crash!" />
       <p class="crash-text">
         Your device is not supported.<br />
         Minimum 1600 x 900 display required.<br />
@@ -372,7 +372,7 @@
     <script src="./scripts/index.js"></script>
     <noscript>
       <div>
-        <img class="crash-splash" src="./assets/crash.png" alt="Crash!" />
+        <img class="crash-image" src="./assets/crash.png" alt="Crash!" />
         <p class="crash-text">
           Your browser has JavaScript disabled or unsupported.<br />
           This game requires JavaScript to run.<br />

@@ -8,7 +8,7 @@
 
 /*/  Welcome Menu Buttons  /*/
 /*//////////////////////////*/
-#welcome-menu > button {
+#splash-welcome-menu > button {
   width: 100%;
   margin-bottom: 1em;
 }
@@ -16,34 +16,34 @@
 
 /*/  Dialog Box Elements  /*/
 /*/////////////////////////*/
-#new-city-dialog form,
-#load-city-dialog form {
+#dialog-new-city form,
+#dialog-load-city form {
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 
-.full-width-input {
+.input-full-width {
   width: 100%;
 }
 
 
 /*/  City View Elements  /*/
 /*////////////////////////*/
-#creditbalance-label {
+#ui-label-creditbalance {
   /* font-family: 'Times New Roman', Times, serif; */
   font-size: 1.75em;
   font-style: italic;
   color: var(--credits-gold);
 }
 
-#cashflow-label {
+#ui-label-cashflow {
   /* font-family: 'Times New Roman', Times, serif; */
   font-size: 1em;
   color: #0E0;
 }
 
-#RCI-container {
+#ui-RCI-container {
   position: relative;
   height: 100%;
   min-height: 3em;
@@ -53,7 +53,7 @@
   overflow: hidden;
 }
 
-#RCI-zero-line {
+#ui-RCI-origo {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -64,7 +64,7 @@
   background-color: var(--default-fore-color);
 }
 
-.RCI-label {
+.ui-RCI-data {
   position: absolute;
   z-index: 0;
   width: 25%;
@@ -111,9 +111,9 @@
   display: none !important;
 }
 
-.hidden {
+/* .hidden {
   visibility: hidden !important;
-}
+} */
 
 .in-debt {
   color: var(--credits-red);

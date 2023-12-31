@@ -5,10 +5,10 @@
 function validateDisplayDevice() {
   console.debug(`window.screen Size: (${window.screen.width},${window.screen.height})`);
   if (window.screen.width >= 1600 && window.screen.height >= 900) {
-    $("#normal-game-screen").removeClass("not-displayed");
+    $("#screen-normal").removeClass("not-displayed");
     return true;
   } else {
-    $("#device-crash-screen").removeClass("not-displayed");
+    $("#screen-crash").removeClass("not-displayed");
     console.error('Device not supported!');
     return false;
   }

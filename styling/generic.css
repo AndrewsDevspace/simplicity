@@ -79,33 +79,33 @@ dialog > h2 {
 /*/  Button Style Changes In Dialogs  /*/
 /*/////////////////////////////////////*/
 dialog button,
-.cityview-control-container button {
+.ui-controls-modder-prefix button {
   background-color: var(--dia-ctrl-back-color);
   color: inherit;
 }
 
-.cityview-control-container button:focus {
+.ui-controls-modder-prefix button:focus {
   outline: none;
 }
 
-.cityview-control-container button:hover {
+.ui-controls-modder-prefix button:hover {
   outline: var(--default-hover-color) solid 2px;
   color: var(--default-hover-color);
 }
 
-.cityview-control-container button:active {
+.ui-controls-modder-prefix button:active {
   outline: var(--default-active-color) solid 3px;
   color: var(--default-active-color);
 }
 
 dialog button[disabled],
 dialog button:disabled,
-.cityview-control-container button[disabled],
-.cityview-control-container button:disabled {
+.ui-controls-modder-prefix button[disabled],
+.ui-controls-modder-prefix button:disabled {
   color: var(--dia-ctrl-dis-f-color);
 }
 
-#cityview-topcontrols #menu-button {
+#ui-top-container #ui-top-button-menu {
   padding: 0.3em;
 }
 
@@ -113,7 +113,7 @@ dialog button:disabled,
 /*/  Label Style In Dialogs  /*/
 /*////////////////////////////*/
 dialog label,
-.cityview-control-container label {
+.ui-controls-modder-prefix label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.25em;
   user-select: none;
@@ -127,18 +127,18 @@ dialog label.input-text {
 
 /*/  Custom Radio Buttons  /*/
 /*//////////////////////////*/
-.radio-container-dialog,
-.radio-container-speed {
+.dialog-radio-container,
+.speed-radio-custom-ctn {
   position: relative;
 }
 
-.radio-container-dialog + .radio-container-dialog {
+.dialog-radio-container + .dialog-radio-container {
   margin-top: 1em;
 }
 
 dialog label.input-radio,
-.cityview-control-container label,
-.cityview-control-container label.input-radio {
+.ui-controls-modder-prefix label,
+.ui-controls-modder-prefix label.input-radio {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
@@ -149,11 +149,11 @@ dialog label.input-radio,
   border-radius: 5px;
 }
 
-.cityview-control-container label {
+.ui-controls-modder-prefix label {
   padding: 0.5em 3em;
   min-width: max-content;
 }
-.cityview-control-container label.input-radio {
+.ui-controls-modder-prefix label.input-radio {
   padding: 0.3em;
 }
 
@@ -191,11 +191,11 @@ input[type="radio"]:disabled + label {
   letter-spacing: 0.5em;
 }
 
-.cityview-control-container input[type="radio"]:focus + label {
+.ui-controls-modder-prefix input[type="radio"]:focus + label {
   outline: none;
 }
 
-.cityview-control-container input[type="radio"]:checked + label {
+.ui-controls-modder-prefix input[type="radio"]:checked + label {
   background-color: var(--speed-chck-bg-color);
   color: var(--speed-checked-color);
 }
@@ -294,27 +294,27 @@ dialog input[type="text"]:focus {
 
 
 /**  Make a DIV's contents (here: Label & TextInput pairs) centered.  **/
-.content-centering {
+.content-centered {
   text-align: center;
 }
 
-.content-centering input[type="text"] {
+.content-centered input[type="text"] {
   text-align: inherit;
 }
 
 
 /**  Make a nice row of the few usual Dialog Buttons, and add margins.  **/
-.button-content-row {
+.content-button-row {
   display: flex;
 }
 
-.button-content-row > button {
+.content-button-row > button {
   margin: 0 0.5em;
 }
 
 
 /**  Container Formatting  **/
-.cityview-toolbox-root {
+.toolbox-root-container {
   background-color: var(--dia-ctrl-back-color);
   color: inherit;
   border-radius: 5px;
@@ -322,7 +322,7 @@ dialog input[type="text"]:focus {
   min-width: max-content;
 }
 
-.cityview-toolbox-root span {
+.toolbox-root-container span {
   display: inline-block;
   box-sizing: border-box;
   margin: 0;
@@ -331,19 +331,19 @@ dialog input[type="text"]:focus {
   user-select: none;
 }
 
-.cityview-toolbox {
+.common-menu-container {
   overflow: hidden;
   background-color: transparent;
   min-height: 0;
 }
 
-.planning-toolbox-button-container {
+.planning-menu-item-container {
   position: relative;
   box-sizing: border-box;
   padding: 0.75em 1em 0.75em 0.5em;
 }
 
-.stats-toolbox-button-container {
+.stats-menu-item-container {
   position: relative;
   box-sizing: border-box;
   padding: 0.75em 0.5em 0.75em 1em;
@@ -358,26 +358,26 @@ dialog input[type="text"]:focus {
   background-color: var(--dia-ctrl-back-color);
 }
 
-.planning-toolbox-button-container > .toolbox-decor {
+.planning-menu-item-container > .toolbox-decor {
   left: 0;
 }
 
-.stats-toolbox-button-container > .toolbox-decor {
+.stats-menu-item-container > .toolbox-decor {
   right: 0;
 }
 
-.planning-toolbox-button-container:last-child > .toolbox-decor {
+.planning-menu-item-container:last-child > .toolbox-decor {
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
 }
 
-.stats-toolbox-button-container:last-child > .toolbox-decor {
+.stats-menu-item-container:last-child > .toolbox-decor {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
-.planning-toolbox-button-container > .toolbox-toggler,
-.stats-toolbox-button-container > .toolbox-toggler {
+.planning-menu-item-container > .toolbox-toggler,
+.stats-menu-item-container > .toolbox-toggler {
   position: relative;
   z-index: 1;
 }

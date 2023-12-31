@@ -8,15 +8,15 @@ function removeFocus(element) {
 
 function updateMainMenuButtons() {
   if (localStorageUsable && SaveDataHeader.usedSaveSlots() > 0) {
-    $("#loadcity-button").attr("disabled", null);
+    $("#welcome-menu-button-load").attr("disabled", null);
   } else {
-    $("#loadcity-button").attr("disabled", "true");
+    $("#welcome-menu-button-load").attr("disabled", "true");
   }
 
   if (SaveDataHeader.usedSaveSlots() < 5) {
-    $("#newcity-button").attr("disabled", null);
+    $("#welcome-menu-button-new").attr("disabled", null);
   } else {
-    $("#newcity-button").attr("disabled", "true");
+    $("#welcome-menu-button-new").attr("disabled", "true");
   }
 }
 
@@ -45,14 +45,14 @@ function resetToolBoxes() {
   // "Click" opened tool descriptions:
   $(".toggled.tool-desc-opener-btn").trigger("click");
   // "Click" the toolbox menu buttons off:
-  $("#planning-button").removeClass("toggled");
-  $("#stats-button").removeClass("toggled");
+  $("#planning-root-button").removeClass("toggled");
+  $("#stats-root-button").removeClass("toggled");
   // Hide actual toolboxes:
-  $(".cityview-toolbox").addClass("not-displayed");
+  $(".common-menu-container").addClass("not-displayed");
 }
 
 function updateCreditBalanceLabel() {
-  let label = $("#creditbalance-label");
+  let label = $("#ui-label-creditbalance");
   let credits = cityData.credits;
 
   //Format number: group 3 digits by ' '...
@@ -79,18 +79,18 @@ function updateGameDateLabel() {
 }
 
 function enterCityView() {
-  $("#welcome-splash-container").addClass("not-displayed");
+  $("#normal-splash-welcome-container").addClass("not-displayed");
   console.debug('{StartCity} Executing.');
 
-  $("#cityname-label").text(cityData.name);
+  $("#ui-top-label-cityname").text(cityData.name);
   resetToolBoxes();
   updateCreditBalanceLabel();
   updateGameDateLabel();
-  $("#gamearea-cityview").removeClass("not-displayed");
+  $("#normal-gamearea-container").removeClass("not-displayed");
 }
 
 function leaveCityView() {
-  $("#gamearea-cityview").addClass("not-displayed");
-  $("#welcome-splash-container").removeClass("not-displayed");
+  $("#normal-gamearea-container").addClass("not-displayed");
+  $("#normal-splash-welcome-container").removeClass("not-displayed");
 }
 

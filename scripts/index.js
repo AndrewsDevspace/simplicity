@@ -95,17 +95,17 @@ if (validateDisplayDevice()) {
   ////////////////////////////////
 
   // Open the New City Dialog:
-  $("#newcity-button").on("click", function() {
+  $("#welcome-menu-button-new").on("click", function() {
     $("#new-city-input-name")[0].value = "";
     $("#new-city-found").attr("disabled", "true");
-    $("#new-city-dialog")[0].showModal();
+    $("#dialog-new-city")[0].showModal();
   });
 
   // Open the Load City Dialog:
-  $("#loadcity-button").on("click", function() {
+  $("#welcome-menu-button-load").on("click", function() {
     // Fill up radio-labels with names...
-    let radios = $('#load-city-dialog input[name="slot"]');
-    let labels = $('#load-city-dialog input[name="slot"] + label');
+    let radios = $('#dialog-load-city input[name="slot"]');
+    let labels = $('#dialog-load-city input[name="slot"] + label');
     for (let i = 0; i < labels.length; i++) {
       let ls;
       if (i < SaveDataHeader.cityHeaders.length) {
@@ -127,18 +127,18 @@ if (validateDisplayDevice()) {
     }
 
     updateLoadDialogButtonsEnabled(false);
-    $("#load-city-dialog")[0].showModal();
+    $("#dialog-load-city")[0].showModal();
   });
 
   // Show Save City Dialog:
-  $("#menu-button").on("click", function() {
+  $("#ui-top-button-menu").on("click", function() {
     if (!localStorageUsable) {
-      $("#save-city-save").attr("disabled", "true");
+      $("#game-menu-save").attr("disabled", "true");
     } else {
-      $("#save-city-save").attr("disabled", null);
+      $("#game-menu-save").attr("disabled", null);
     }
-    removeFocus($("#menu-button")[0]);
-    $("#save-city-dialog")[0].showModal();
+    removeFocus($("#ui-top-button-menu")[0]);
+    $("#dialog-game-menu")[0].showModal();
   });
 
   // To Monitor the City Name Field for Empty String & Existing Names, and Disable the Found Button when Appropriate:
@@ -151,44 +151,44 @@ if (validateDisplayDevice()) {
     }
   });
   // Enable Load City only once a Slot radio button is checked:
-  $('#load-city-dialog input[name="slot"]').on("change", function(e) {
+  $('#dialog-load-city input[name="slot"]').on("change", function(e) {
     updateLoadDialogButtonsEnabled(true);
   });
 
   // Log ESC key:
-  $("#new-city-dialog").on("cancel", function(e) {
+  $("#dialog-new-city").on("cancel", function(e) {
     console.debug('ACTION: [Found New City] Cancelled (ESC).');
   });
-  $("#load-city-dialog").on("cancel", function(e) {
+  $("#dialog-load-city").on("cancel", function(e) {
     console.debug('ACTION: [Load Old City] Cancelled (ESC).');
   });
-  $("#save-city-dialog").on("cancel", function(e) {
+  $("#dialog-game-menu").on("cancel", function(e) {
     console.debug('ACTION: [Save Active City] Cancelled (ESC).');
   });
 
   // Close the Dialog if Cancel button clicked:
   $("#new-city-cancel").on("click", function() {
-    $("#new-city-dialog")[0].close();
+    $("#dialog-new-city")[0].close();
     console.debug('ACTION: [Found New City] Cancelled (BTN).');
   });
   $("#load-city-cancel").on("click", function() {
-    $("#load-city-dialog")[0].close();
+    $("#dialog-load-city")[0].close();
     console.debug('ACTION: [Load Old City] Cancelled (BTN).');
   });
-  $("#save-city-cancel").on("click", function() {
-    $("#save-city-dialog")[0].close();
+  $("#game-menu-cancel").on("click", function() {
+    $("#dialog-game-menu")[0].close();
     console.debug('ACTION: [Save Active City] Cancelled (BTN).');
   });
 
   // Deleting save file:
   $("#load-city-delete").on("click", function() {
-    let deleting = $('#load-city-dialog input[name="slot"]:checked')[0];
+    let deleting = $('#dialog-load-city input[name="slot"]:checked')[0];
     updateLoadDialogButtonsEnabled(false);
     
     let i = deleting.value;
     deleting.checked = false;
     deleting.setAttribute("disabled", "true");
-    $('#load-city-dialog label[for="s' + i + '"]')[0].innerHTML = "EMPTY SLOT";
+    $('#dialog-load-city label[for="s' + i + '"]')[0].innerHTML = "EMPTY SLOT";
 
     saveSlotDelete(i);
     saveWriteHeader();
@@ -197,7 +197,7 @@ if (validateDisplayDevice()) {
   });
 
   // Set up the New City Data, and Start the Simulation:
-  $("#new-city-dialog > form").on("submit", function(e) {
+  $("#dialog-new-city > form").on("submit", function(e) {
     console.info('ACTION: [Found New City] Submitted.');
 
     currentSaveSlot = SaveDataHeader.firstEmptySlot();
@@ -217,9 +217,9 @@ if (validateDisplayDevice()) {
   });
 
   // Load old city data, start the simulation:
-  $("#load-city-dialog > form").on("submit", function(e) {
+  $("#dialog-load-city > form").on("submit", function(e) {
     console.info('ACTION: [Load Old City] Submitted.');
-    currentSaveSlot = $('#load-city-dialog input[name="slot"]:checked')[0].value;
+    currentSaveSlot = $('#dialog-load-city input[name="slot"]:checked')[0].value;
     saveRead();
     enterCityView();
   });
@@ -235,18 +235,18 @@ if (validateDisplayDevice()) {
     removeFocus(this);
   });
 
-  $("#stats-button").on("click", function(e) {
+  $("#stats-root-button").on("click", function(e) {
     // Show/Hide Detailed Stats Toolbox:
-    $("#stats-button").hasClass("toggled") ?
-      $("#citystats-container").removeClass("not-displayed") :
-      $("#citystats-container").addClass("not-displayed");
+    $("#stats-root-button").hasClass("toggled") ?
+      $("#stats-menu-container").removeClass("not-displayed") :
+      $("#stats-menu-container").addClass("not-displayed");
   });
 
-  $("#planning-button").on("click", function(e) {
+  $("#planning-root-button").on("click", function(e) {
     // Show/Hide City Builder (Planner) Toolbox:
-    $("#planning-button").hasClass("toggled") ?
-      $("#cityplanning-container").removeClass("not-displayed") :
-      $("#cityplanning-container").addClass("not-displayed");
+    $("#planning-root-button").hasClass("toggled") ?
+      $("#planning-menu-container").removeClass("not-displayed") :
+      $("#planning-menu-container").addClass("not-displayed");
   });
 
   $(".tool-desc-opener-btn").on("click", function(e) {
@@ -256,16 +256,16 @@ if (validateDisplayDevice()) {
   });
 
   // Handle Save & Quit @ Save City Dialog:
-  $("#save-city-save").on("click", function() {
-    $("#save-city-dialog")[0].close();
+  $("#game-menu-save").on("click", function() {
+    $("#dialog-game-menu")[0].close();
     // Save the game-state:
     saveWrite();
     leaveCityView();
   });
 
   // Handle Quit Only @ Save City Dialog:
-  $("#save-city-quit").on("click", function() {
-    $("#save-city-dialog")[0].close();
+  $("#game-menu-quit").on("click", function() {
+    $("#dialog-game-menu")[0].close();
     leaveCityView();
   });
 }

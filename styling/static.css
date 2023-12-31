@@ -14,7 +14,7 @@ body {
   color: var(--default-fore-color);
 }
 
-#normal-game-screen {
+#screen-normal {
   position: relative;
   height: 100lvh;
   overflow: hidden;
@@ -39,7 +39,7 @@ span > svg {
 
 /*/  Welcome Screen Elements  /*/
 /*/////////////////////////////*/
-#welcome-splash-container {
+#normal-splash-welcome-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,18 +52,18 @@ span > svg {
   padding: 0 10%;
 }
 
-#welcome-splash {
+#splash-welcome {
   position: relative;
   width: 100%;
 }
 
-#welcome-splash > img {
+#splash-welcome > img {
   position: relative;
   z-index: 0;
   width: 100%;
 }
 
-#welcome-menu {
+#splash-welcome-menu {
   position: absolute;
   z-index: 1;
   left: 4%;
@@ -74,14 +74,14 @@ span > svg {
 
 /*/  Game Area - City View  /*/
 /*///////////////////////////*/
-#gamearea-cityview {
+#normal-gamearea-container {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-#cityview-ui-topcontainer {
+#gamearea-ui-container {
   position: relative;
   z-index: 1;
   display: flex;
@@ -89,29 +89,29 @@ span > svg {
   height: 100%;
 }
 
-#cityview-topcontrols {
+#ui-top-container {
   display: flex;
   align-items: flex-start;
   margin: 1em 2em 0 2em;
 }
 
-#cityview-topcontrols > * {
+#ui-top-container > * {
   flex: 1;
 }
 
-#speed-controls {
+#ui-top-speed-container {
   display: flex;
   gap: 0.5em;
 }
 
-#cityview-ui-tool-container {
+#ui-sub-container {
   display: flex;
   justify-content: space-between;
   height: 100%;
   min-height: 0;  /* For the "No-Overflow Min-Height Trick", height must be set too! */
 }
 
-#cityview-ui-planning-container {
+#ui-sub-planning-container {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-start;
@@ -122,7 +122,7 @@ span > svg {
   /* max-width: 30%; */
 }
 
-#cityview-ui-stats-container {
+#ui-sub-stats-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -132,19 +132,19 @@ span > svg {
   /* max-width: 30%; */
 }
 
-#cityview-cityplanning {
+#planning-root-container {
   display: flex;
   align-items: flex-start;
   gap: 1.5em;
 }
 
-#cityview-citystats {
+#stats-root-container {
   display: flex;
   align-items: flex-end;
   gap: 1.5em;
 }
 
-#cityplanning-container {
+#planning-menu-container {
   display: flex;
   align-items: flex-end;
   height: calc(100% - 5em);
@@ -157,7 +157,7 @@ span > svg {
   [ https://stackoverflow.com/questions/33891709/when-flexbox-items-wrap-in-column-mode-container-does-not-grow-its-width ]
   [ https://github.com/philipwalton/flexbugs#flexbug-14 ]
 */
-#cityview-cityplanning-menu {
+#planning-menu {
   display: flex;
   /* writing-mode: vertical-lr; */
   /* text-orientation: upright; */
@@ -171,11 +171,11 @@ span > svg {
 }
 
 /* Flex Bug #14 more fix: */
-/* #cityview-cityplanning-menu * {
+/* #planning-menu * {
   writing-mode: horizontal-tb;
 } */
 
-#citystats-container{
+#stats-menu-container{
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
@@ -184,7 +184,7 @@ span > svg {
   /* min-height: 0; */
 }
 
-#cityview-citystats-menu {
+#stats-menu {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap-reverse;
@@ -198,7 +198,7 @@ span > svg {
 
 /*/  Crash Screen Elements  /*/
 /*///////////////////////////*/
-.crash-splash {
+.crash-image {
   width: 100%;
 }
 

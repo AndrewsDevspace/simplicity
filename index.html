@@ -90,23 +90,23 @@
                 <div id="cityview-cityplanning-menu">
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
-                    <button id="p1" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p1</button>
+                    <button id="p1" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp1" type="button" tabindex="-1" >p1</button>
                   </div>
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
-                    <button id="p2" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p2</button>
+                    <button id="p2" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp2" type="button" tabindex="-1" >p2</button>
                   </div>
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
-                    <button id="p3" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p3</button>
+                    <button id="p3" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp3" type="button" tabindex="-1" >p3</button>
                   </div>
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
-                    <button id="p4" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p4</button>
+                    <button id="p4" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp4" type="button" tabindex="-1" >p4</button>
                   </div>
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
-                    <button id="p5" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p5</button>
+                    <button id="p5" class="toolbox-toggler tool-toggler-right tool-desc-opener-btn" data-tool-id="tp5" type="button" tabindex="-1" >p5</button>
                   </div>
                   <div class="planning-toolbox-button-container">
                     <div class="toolbox-decor"></div>
@@ -168,48 +168,15 @@
                     <div class="toolbox-decor"></div>
                     <button id="p20" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p20</button>
                   </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p21" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p21</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p22" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p22</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p23" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p23</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p24" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p24</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p25" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p25</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p26" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p26</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p27" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p27</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p28" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p28</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p29" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p29</button>
-                  </div>
-                  <div class="planning-toolbox-button-container">
-                    <div class="toolbox-decor"></div>
-                    <button id="p30" class="toolbox-toggler tool-toggler-right" type="button" tabindex="-1" >p30</button>
-                  </div>
                 </div>
-                <div>Plan Info & Actions</div>
+                <div class="tool-description-container">
+                  <h3 class="content-centering">City Planning</h3>
+                  <div id="tp1" class="tool-descriptor not-displayed">Plan Tool 1</div>
+                  <div id="tp2" class="tool-descriptor not-displayed">Plan Tool 2</div>
+                  <div id="tp3" class="tool-descriptor not-displayed">Plan Tool 3</div>
+                  <div id="tp4" class="tool-descriptor not-displayed">Plan Tool 4</div>
+                  <div id="tp5" class="tool-descriptor not-displayed">Plan Tool 5</div>
+                </div>
               </div>
             </div>
 
@@ -237,126 +204,96 @@
                 </button>
               </div>
               <!-- Testing panel -->
-              <div id="cityview-citystats-menu" class="cityview-toolbox not-displayed">
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d1" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d1</button>
+              <div id="citystats-container" class="cityview-toolbox not-displayed">
+                <div id="cityview-citystats-menu">
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s1" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts1" type="button" tabindex="-1" >s1</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s2" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts2" type="button" tabindex="-1" >s2</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s3" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts3" type="button" tabindex="-1" >s3</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s4" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts4" type="button" tabindex="-1" >s4</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s5" class="toolbox-toggler tool-toggler-left tool-desc-opener-btn" data-tool-id="ts5" type="button" tabindex="-1" >s5</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s6" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s6</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s7" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s7</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s8" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s8</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s9" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s9</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s10" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s10</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s11" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s11</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s12" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s12</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s13" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s13</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s14" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s14</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s15" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s15</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s16" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s16</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s17" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s17</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s18" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s18</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s19" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s19</button>
+                  </div>
+                  <div class="stats-toolbox-button-container">
+                    <div class="toolbox-decor"></div>
+                    <button id="s20" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >s20</button>
+                  </div>
                 </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d2" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d2</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d3" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d3</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d4" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d4</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d5" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d5</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d6" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d6</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d7" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d7</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d8" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d8</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d9" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d9</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d10" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d10</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d11" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d11</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d12" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d12</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d13" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d13</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d14" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d14</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d15" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d15</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d16" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d16</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d17" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d17</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d18" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d18</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d19" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d19</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d20" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d20</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d21" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d21</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d22" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d22</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d23" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d23</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d24" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d24</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d25" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d25</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d26" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d26</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d27" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d27</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d28" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d28</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d29" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d29</button>
-                </div>
-                <div class="stats-toolbox-button-container">
-                  <div class="toolbox-decor"></div>
-                  <button id="d30" class="toolbox-toggler tool-toggler-left" type="button" tabindex="-1" >d30</button>
+                <div class="tool-description-container">
+                  <h3 class="content-centering">City Statistics</h3>
+                  <div id="ts1" class="tool-descriptor not-displayed">Stat Tool 1</div>
+                  <div id="ts2" class="tool-descriptor not-displayed">Stat Tool 2</div>
+                  <div id="ts3" class="tool-descriptor not-displayed">Stat Tool 3</div>
+                  <div id="ts4" class="tool-descriptor not-displayed">Stat Tool 4</div>
+                  <div id="ts5" class="tool-descriptor not-displayed">Stat Tool 5</div>
                 </div>
               </div>
             </div>
@@ -411,6 +348,7 @@
       </dialog>
 
       <dialog id="save-city-dialog">
+        <h2 class="content-centering">Game Menu</h2>
         <div class="button-content-row">
           <button type="button" id="save-city-save">Save & Quit</button>
           <button type="button" id="save-city-quit">Quit</button>

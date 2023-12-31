@@ -238,8 +238,8 @@ if (validateDisplayDevice()) {
   $("#stats-button").on("click", function(e) {
     // Show/Hide Detailed Stats Toolbox:
     $("#stats-button").hasClass("toggled") ?
-      $("#cityview-citystats-menu").removeClass("not-displayed") :
-      $("#cityview-citystats-menu").addClass("not-displayed");
+      $("#citystats-container").removeClass("not-displayed") :
+      $("#citystats-container").addClass("not-displayed");
   });
 
   $("#planning-button").on("click", function(e) {
@@ -247,6 +247,12 @@ if (validateDisplayDevice()) {
     $("#planning-button").hasClass("toggled") ?
       $("#cityplanning-container").removeClass("not-displayed") :
       $("#cityplanning-container").addClass("not-displayed");
+  });
+
+  $(".tool-desc-opener-btn").on("click", function(e) {
+    this.classList.contains("toggled") ?
+      $("#" + this.dataset.toolId).removeClass("not-displayed") :
+      $("#" + this.dataset.toolId).addClass("not-displayed");
   });
 
   // Handle Save & Quit @ Save City Dialog:

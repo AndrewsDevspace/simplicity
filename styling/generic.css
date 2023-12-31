@@ -53,13 +53,26 @@ dialog {
 
 /*/  Dialog Headers  /*/
 /*////////////////////*/
-dialog > form > h2 {
+dialog h2 {
   margin: 0;
   min-width: max-content;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2em;
   color: var(--dialog-head-color);
   user-select: none;
+}
+
+dialog > h2 {
+  margin-bottom: 1em;
+}
+
+.tool-description-container > h3 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1em;
+  color: var(--dialog-head-color);
+  user-select: none;
+  padding: 0;
+  margin: 0 0 0.5em 0;
 }
 
 
@@ -367,6 +380,45 @@ dialog input[type="text"]:focus {
 .stats-toolbox-button-container > .toolbox-toggler {
   position: relative;
   z-index: 1;
+}
+
+.tool-description-container {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: var(--dia-ctrl-back-color);
+  /* color: var(--dialog-fore-color); */
+  /* border: 1px solid var(--dialog-fore-color); */
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  max-height: calc(100% - 2em);
+  overflow: hidden auto;
+}
+
+/* Custom V. Scrollbar for the Desc. Cont. */
+.tool-description-container::-webkit-scrollbar {
+  width: 9px;
+}
+.tool-description-container::-webkit-scrollbar-track {
+  background: var(--scroll-back-color);
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+.tool-description-container::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-color);
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+.tool-descriptor {
+  padding: 0.2em;
+  margin-top: 0.5em;
+  border: 1px dashed red;
+  /* ??? */
+  box-sizing: content-box;
+  min-width: 100px;
+  height: 10em;
 }
 
 .neutral-emphasized {

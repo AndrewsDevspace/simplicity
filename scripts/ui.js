@@ -42,7 +42,11 @@ function updateLoadDialogButtonsEnabled(bool) {
 // }
 
 function resetToolBoxes() {
-  $(".toolbox-toggler").removeClass("toggled");
+  // "Click" opened tool descriptions:
+  $(".toggled.tool-desc-opener-btn").trigger("click");
+  // "Click" the toolbox menu buttons off:
+  $("#planning-button").removeClass("toggled");
+  $("#stats-button").removeClass("toggled");
   // Hide actual toolboxes:
   $(".cityview-toolbox").addClass("not-displayed");
 }

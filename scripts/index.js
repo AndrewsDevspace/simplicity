@@ -85,6 +85,7 @@ if (validateDisplayDevice()) {
       SaveDataHeader.cityHeaders = [];
     }
     updateMainMenuButtons();
+    $("#normal-splash-welcome-container").removeClass("not-displayed");
   });
   
   ///  Setup Custom Default Behaviour for Modal Dialogs

@@ -15,7 +15,11 @@ function validateDisplayDevice() {
 }
 
 async function validateLocalStorage() {
-  if (localStorage) {
+  try {
+    localStorage.setItem("testing", "test");
+    localStorage.removeItem("testing");
+    localStorageUsable = true;
+
     try {
       const est = await navigator.storage.estimate();
       console.debug(`Maximum Local Storage: (~${Math.floor(est.quota / 1024 / 1024)} MB)`);
@@ -38,11 +42,12 @@ async function validateLocalStorage() {
       }
       console.groupEnd();
     } catch (e) {
-      console.warn(e);
+      console.debug(e);
       console.warn("Saving games may not be reliable!");
-    } finally {
-      localStorageUsable = true;
     }
+  } catch (err) {
+    console.debug(err);
+    console.warn("Local Storage Test Failed!");
   }
 }
 
